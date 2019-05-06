@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Customer
+comment0.text=\r\n\ Class\ for\ customer\ user\r\n\r\n\ @author\ Aditya\ Kumar\r\n\ @version\ 5/5/2019\r\n
+comment1.params=
+comment1.target=Customer()
+comment1.text=\r\n\ Default\ constructor\ should\ create\ a\ default\ administrator\r\n
+comment2.params=newFirstName\ newLastName\ newPhoneNumber\ newEmailAddress\ newPassword\ newAddress\ newIsStudent
+comment2.target=Customer(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ boolean)
+comment2.text=\r\n\ Non-default\ constructor\r\n
+comment3.params=
+comment3.target=java.lang.String\ getAddress()
+comment4.params=
+comment4.target=boolean\ getIsStudent()
+comment5.params=newAddress
+comment5.target=void\ setAddress(java.lang.String)
+comment6.params=newIsStudent
+comment6.target=void\ setIsStudent(boolean)
+numComments=7
