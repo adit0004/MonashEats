@@ -41,18 +41,19 @@ public class RestaurantList
             restaurantList.add(restaurant);
         }
     }
-    public removeRestaurant(Restaurant restaurant){
+    public RestaurantList removeRestaurant(Restaurant restaurant,ArrayList<Restaurant> rList){
         boolean existed=false;
-        for(int i :  restaurantList){
-            if(restaurant == restaurantList.get(i)){
+        for(int i : rList){
+            if(restaurant == rList.get(i)){
                existed=true;
             }
         }
         if(existed){
-            restaurantList.remove(i);
+            restaurantList.remove(restaurant);
             System.out.println("This restaurant has been removed successfully!");
         }else{
             System.out.println("This restaurant does not exist! Please try again!");
-        }       
+        }
+        return rList;       
     }
 }
