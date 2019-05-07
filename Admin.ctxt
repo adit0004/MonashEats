@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=Admin
-comment0.text=\n\ Class\ for\ admin\ user\n\n\ @author\ Aditya\ Kumar\n\ @version\ 5/5/2019\n
-comment1.params=
-comment1.target=Admin()
-comment1.text=\n\ Default\ constructor\ should\ create\ a\ default\ administrator\n
-comment2.params=newFirstName\ newLastName\ newPhoneNumber\ newEmailAddress\ newPassword
-comment2.target=Admin(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
-comment2.text=\n\ Non-default\ constructor\n
+comment0.text=\r\n\ \r\n
+comment1.params=newFirstName\ newLastName\ NewphoneNumber\ newEmail\ newPassword\ newAcountType
+comment1.target=Admin(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment1.text=\r\n\ The\ non-default\ constructor\ of\ Admin\ class\r\n
+comment2.params=
+comment2.target=Admin()
+comment2.text=\r\n\ The\ default\ constructor\ of\ Admin\ class\r\n
 numComments=3

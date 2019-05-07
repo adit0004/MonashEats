@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Payment
-comment0.text=\n\ The\ class\ to\ handle\ payments\n\n\ @author\ Aditya\ Kumar\n\ @version\ 5/5/2019\n
+comment0.text=\r\n\ The\ class\ to\ handle\ payments\r\n\r\n\ @author\ Aditya\ Kumar\r\n\ @version\ 5/5/2019\r\n
 comment1.params=
 comment1.target=Payment()
 comment2.params=newAmount\ newMethod

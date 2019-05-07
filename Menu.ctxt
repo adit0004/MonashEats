@@ -1,10 +1,14 @@
 #BlueJ class context
 comment0.target=Menu
-comment0.text=\n\ A\ collection\ of\ items\ served\ by\ a\ restaurant\n\n\ @author\ Aditya\ Kumar\n\ @version\ 5/5/2019\n
+comment0.text=\r\n\ A\ collection\ of\ items\ served\ by\ a\ restaurant\r\n\r\n\ @author\ Yupu\ Li\r\n\ @version\ 7/5/2019\r\n
 comment1.params=
 comment1.target=Menu()
-comment1.text=\n\ Default\ constructor\n
+comment1.text=\r\n\ Default\ constructor\r\n
 comment2.params=newItems
 comment2.target=Menu(java.util.ArrayList)
-comment2.text=\n\ Parameterized\ constructor\n
-numComments=3
+comment2.text=\r\n\ Parameterized\ constructor\r\n
+comment3.params=item
+comment3.target=void\ addItems(Items)
+comment4.params=item
+comment4.target=void\ removeItems(Items)
+numComments=5

@@ -24,14 +24,15 @@ public class RestaurantList
     /**
      * Parameterized constructor
      */
-    public RestaurantList(ArrayList<Restaurant> newRestaurantList)
+  public RestaurantList(ArrayList<Restaurant> newRestaurantList)
     {
         restaurantList = newRestaurantList;
     }
-    public void addRestaurant(Restaurant restaurant){
+    
+    public void addRestaurant(Restaurant restaurant,ArrayList<Restaurant> restaurantList){
         boolean existed=false;
-        for(int i :  restaurantList){
-            if(restaurant == restaurantList.get(i)){
+        for(Restaurant i : restaurantList){
+            if(restaurant == i){
                existed=true;
             }
         }
@@ -41,10 +42,10 @@ public class RestaurantList
             restaurantList.add(restaurant);
         }
     }
-    public RestaurantList removeRestaurant(Restaurant restaurant,ArrayList<Restaurant> rList){
+    public void removeRestaurant(Restaurant restaurant){
         boolean existed=false;
-        for(int i : rList){
-            if(restaurant == rList.get(i)){
+        for(Restaurant i : restaurantList){
+            if(restaurant == i){
                existed=true;
             }
         }
@@ -54,6 +55,6 @@ public class RestaurantList
         }else{
             System.out.println("This restaurant does not exist! Please try again!");
         }
-        return rList;       
+        //return rList;       
     }
 }

@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=Order
-comment0.text=\n\ Objects\ of\ this\ class\ hold\ an\ entire\ order,\ one\ customer's\ details\ \n\ \n\ @author\ Aditya\ Kumar\n\ @version\ 5/5/2019\n
+comment0.text=\r\n\ Objects\ of\ this\ class\ hold\ an\ entire\ order,\ one\ customer's\ details\ \r\n\ \r\n\ @author\ Aditya\ Kumar\r\n\ @version\ 5/5/2019\r\n
 comment1.params=
 comment1.target=Order()
-comment1.text=\n\ Default\ constructor\ for\ order\n
+comment1.text=\r\n\ Default\ constructor\ for\ order\r\n
 comment10.params=newOrderStatus
 comment10.target=void\ setOrderStatus(java.lang.String)
 comment11.params=newPaymentStatus

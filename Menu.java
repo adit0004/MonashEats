@@ -25,14 +25,11 @@ public class Menu
         items = newItems;
     }
     
-    public void showMenu(){
-        System.out.
-    }
 
     public void addItems(Items item){
         boolean existed=false;
-        for(int i :  items){
-            if(item == items.get(i)){
+        for(Items i : items){
+            if(item == i){
                existed=true;
             }
         }
@@ -42,11 +39,11 @@ public class Menu
             items.add(item);
         }
     }
-    public void removeItems(Item item){
+    public void removeItems(Items item){
         boolean existed=false;
-        ArrayList<Items> items= item;
-        for(int i : items){
-            if(item.equalitems.get(i)){
+        //ArrayList<Items> items= item;
+        for(Items i : items){
+            if(item==i){
                existed=true;
             }
         }
