@@ -1,5 +1,7 @@
 import java.util.*;
 
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 /**
  * The control class for Monash Eats. This class also behaves like the boundary class, handling IO between the user and the system.
  * @author Aditya Kumar
@@ -44,7 +46,7 @@ public class MonashEats
             
             ans = input.nextInt();
             input.nextLine(); //Clear the buffer
-            
+            //1:login
             if (ans == 1)
             {
                 String email = "";
@@ -64,10 +66,12 @@ public class MonashEats
                 if (email.equals("admin1@monash.edu")&&password.equals("Admin"))
                 {
                     //Admin account
+                    //admin.login();
                 }
                 else if (email.equals("owner@monash.edu")&&password.equals("Owner"))
                 {
                     //Owner account
+                    //owner.login()
                 }
                 else
                 {
@@ -93,11 +97,39 @@ public class MonashEats
                     } while (homeAns != 5);
                 }
             }
-            else if (ans == 2)
+            else if (ans == 2)//2 sign up
             {
-                //Sign up
+                System.out.println("Please enter your fname");
+                fname=input.nextLine();
+                System.out.println("Please enter your lname");
+                lname=input.nextLine();
+                System.out.println("Please enter your phoneNumber");
+                phoneNumber=input.nextInt();
+                System.out.println("Please enter your email");
+                email=input.nextLine();
+                System.out.println("Please enter your password");
+                password=input.nextLine();
+                input.nextLine();
+                User user = new User();
+                user.setFirstName(fname);
+                user.setLastName(lname);
+                user.setPhoneNumber(phoneNumber);
+                user.setEmail(email);
+                user.setPassword(password);
+                userList.add(user);
+                System.out.println("Register successfully! Turn to login page? [y/n]");
+                String back= input.nextLine();
+                input.nextLine();
+                if(back.toUpperCase().equals("Y")){
+                    startProgram();
+                }else{
+                    System.exit(1);                    
+                }
             }
-            else if (ans != 3)
+            else if(ans == 3){
+                System.exit(1);
+            }
+            else
             {
                 System.out.println("Invalid input. Please select from one of the menu options.");
             }

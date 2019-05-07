@@ -1,15 +1,15 @@
 /**
  * Class for individual food items
  *
- * @author Aditya Kumar
- * @version 5/5/2019
+ * @author Yupu Li
+ * @version 7/5/2019
  */
 public class Items
 {
-    String itemName;
-    String description;
-    double price;
-    boolean onDeal;
+    public String itemName;
+    public String description;
+    public double price;
+    public boolean onDeal;
     
     /**
      * Default constructor for objects of class Items
@@ -27,10 +27,10 @@ public class Items
      */
     public Items(String newName, String newDescription, double newPrice, boolean newOnDeal)
     {
-        itemName = newName;
-        description = newDescription;
-        price = newPrice;
-        onDeal = newOnDeal;
+        this.itemName = newName;
+        this.description = newDescription;
+        this.price = newPrice;
+        this.onDeal = newOnDeal;
     }
     
     /**
@@ -96,5 +96,11 @@ public class Items
     {
         onDeal = newOnDeal;
     }
+
+    @Override
+    public String toString() {
+        return "Items{" + "itemName=" + itemName + ", description=" + description + ", price=" + price + ", onDeal=" + onDeal + '}';
+    }
     
 }
+
