@@ -1,52 +1,74 @@
-/**
- * Class for customer user
- *
- * @author Aditya Kumar
- * @version 5/5/2019
- */
 
+/**
+ * 
+ */
 public class Customer extends User
 {
-    String address;
-    boolean isStudent;
-    /**
-     * Default constructor should create a default administrator
-     */
+    private boolean isStudent;
+    private String address;
     
+    /**
+     * Customer class default constructor
+     */
     public Customer()
     {
         super();
-        address = "";
         isStudent = false;
+        address = "";
+    }
+
+    /**
+     * Customer class non-default constructor
+     */
+    public Customer(String newFirstName, String newLastName, String NewphoneNumber,String newEmail,
+                String newPassword, String newAcountType, boolean newIsStudent, String newAddress)
+    {
+        super(newFirstName,newLastName,NewphoneNumber,newEmail,newPassword,newAcountType);
+        isStudent = newIsStudent;
+        address = newAddress;
     }
     
     /**
-     * Non-default constructor
-     */
-    public Customer(String newFirstName, String newLastName, String newPhoneNumber, String newEmailAddress, String newPassword, String newAddress, boolean newIsStudent)
+     * display customer details - address and the customer is student(true) or not(false)
+    */
+    public void displayDetails()
     {
-        super(newFirstName, newLastName, newPhoneNumber, newEmailAddress, newPassword);
-        address = newAddress;
-        isStudent = newIsStudent;
+        super.display();
+        System.out.println("Address: " + address);
+        System.out.println("isStudent: " + isStudent);
     }
     
-    public String getAddress()
-    {
-        return address;
-    }
-    
+    /**
+     * get the account is student(true) or not(false)
+     * return a boolean
+    */
     public boolean getIsStudent()
     {
         return isStudent;
     }
     
-    public void setAddress(String newAddress)
+    /**
+     * get the account owner's address
+     * return a String
+    */
+    public String getAddress()
     {
-        address = newAddress;
+        return address;
     }
     
+    /**
+     * set the account owner's first name
+     */
     public void setIsStudent(boolean newIsStudent)
     {
         isStudent = newIsStudent;
+    }
+    
+    /**
+     * set the account owner's address
+     */
+    public void setAddress(String newAddress)
+    {
+        address = newAddress;
     }
 }

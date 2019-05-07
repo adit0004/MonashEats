@@ -1,26 +1,22 @@
-/**
- * Class for owner user
- *
- * @author Aditya Kumar
- * @version 5/5/2019
- */
 
+/**
+ * 
+ */
 public class Owner extends User
-{
+{    
     /**
-     * Default constructor should create a default administrator
+     * the non-default constructor of the Owner class
      */
-    
+    public Owner(String newFirstName, String newLastName, String NewphoneNumber,String newEmail,String newPassword, String newAcountType)
+    {
+        super(newFirstName, newLastName, NewphoneNumber, newEmail, newPassword, newAcountType);
+    }
+
+    /**
+     * the default constructor of the Owner class
+     */
     public Owner()
     {
-        super("Administrator", "", "", "admin1@monash.edu", "admin");
-    }
-    
-    /**
-     * Non-default constructor
-     */
-    public Owner(String newFirstName, String newLastName, String newPhoneNumber, String newEmailAddress, String newPassword)
-    {
-        super(newFirstName, newLastName, newPhoneNumber, newEmailAddress, newPassword);
+        super();
     }
 }
