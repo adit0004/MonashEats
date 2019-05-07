@@ -91,4 +91,23 @@ public class ShoppingCart
     {
         totalPrice = newTotalPrice;
     }
+    
+    public void showCartDetails()
+    {
+        System.out.println("Order details:");
+        System.out.println();
+        System.out.println("1. Curry Chicken - $4");
+        System.out.println();
+        System.out.println("Order Subotal: $10");
+        System.out.println("Delivery Charges: $5");
+        System.out.println("Order Total: $15");
+        System.out.println("Coupons: $0");
+        System.out.println("Balance: $15");
+        System.out.println();
+        System.out.println("Please select your payment option:");
+        System.out.println();
+        System.out.println("1. Cash");
+        System.out.println("2. Coupons");
+        
+    }
 }

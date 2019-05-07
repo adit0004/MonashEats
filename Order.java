@@ -85,10 +85,60 @@ public class Order
        payment = newPayment;
    }
    
-   public String generateReceipt()
+   public void generateReceipt()
    {
-       String receipt = "";
-       
-       return receipt;
+       System.out.println("========================================================");
+       System.out.println("                     Order Receipt");
+       System.out.println("========================================================");
+       System.out.println();
+       System.out.println("Restaurant A");
+       System.out.println("123 Street Name,");
+       System.out.println("Caulfield East, 3000");
+       System.out.println();
+       System.out.println("--------------------------------------------------------");
+       System.out.println();
+       System.out.println("Customer: Aditya Kumar");
+       System.out.println("\tadit0004@student.monash.edu");
+       System.out.println("\t345, Street Name 2,");
+       System.out.println("\tCaulfield North, 3001");
+       System.out.println();
+       System.out.println("Order Date: 24-03-2019");
+       System.out.println("------------------------------------------------------------------");
+       System.out.println("Item\t\t\tPrice\t\t\tTotal");
+       System.out.println("------------------------------------------------------------------");
+       System.out.println("Curry Chicken\t\t$4\t\t\t$4");
+       System.out.println("Delivery Charges\t$5\t\t\t$5");
+       System.out.println();
+       System.out.println("Order Subtotal\t\t\t\t\t$9");
+       System.out.println();
+       System.out.println("------------------------------------------------------------------");
+       System.out.println();
+       System.out.println("Order Total\t\t\t\t\t$9");
+   }
+   public void orderDetails()
+   {
+       System.out.println("========================================================");
+       System.out.println("                     Order Details");
+       System.out.println("========================================================");
+       System.out.println();
+       System.out.println("Customer: Aditya Kumar");
+       System.out.println("\tadit0004@student.monash.edu");
+       System.out.println("\t345, Street Name 2,");
+       System.out.println("\tCaulfield North, 3001");
+       System.out.println();
+       System.out.println("Order Date: 24-03-2019");
+       System.out.println("Order Status: Preparing");
+       System.out.println("Payment Status: Paid");
+       System.out.println("------------------------------------------------------------------");
+       System.out.println("Item\t\t\tPrice\t\t\tTotal");
+       System.out.println("------------------------------------------------------------------");
+       System.out.println("Curry Chicken\t\t$4\t\t\t$4");
+       System.out.println("Delivery Charges\t$5\t\t\t$5");
+       System.out.println();
+       System.out.println("Order Subtotal\t\t\t\t\t$9");
+       System.out.println();
+       System.out.println("------------------------------------------------------------------");
+       System.out.println();
+       System.out.println("Order Total\t\t\t\t\t$9");
    }
 }
