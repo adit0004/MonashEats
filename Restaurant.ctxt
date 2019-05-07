@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=Restaurant
-comment0.text=\r\n\ This\ class\ stores\ details\ of\ a\ restaurant\r\n\r\n\ @author\ Aditya\ Kumar\r\n\ @version\ 5/5/2019\r\n
+comment0.text=\n\ This\ class\ stores\ details\ of\ a\ restaurant\n\n\ @author\ Aditya\ Kumar\n\ @version\ 5/5/2019\n
 comment1.params=
 comment1.target=Restaurant()
-comment1.text=\r\n\ Default\ constructor\ for\ restaurant\r\n
+comment1.text=\n\ Default\ constructor\ for\ restaurant\n
 comment2.params=newRestaurantName\ newRestaurantAddress\ newRestaurantPhoneNumber\ newRate\ newRatingCount\ newOrders\ newMenu
 comment2.target=Restaurant(java.lang.String,\ java.lang.String,\ java.lang.String,\ double,\ int,\ OrderList,\ Menu)
-comment2.text=\r\n\ Parameterized\ constructor\ for\ restaurant\r\n
+comment2.text=\n\ Parameterized\ constructor\ for\ restaurant\n
 numComments=3
