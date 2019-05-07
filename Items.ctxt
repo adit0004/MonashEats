@@ -1,12 +1,14 @@
 #BlueJ class context
 comment0.target=Items
-comment0.text=\r\n\ Class\ for\ individual\ food\ items\r\n\r\n\ @author\ Aditya\ Kumar\r\n\ @version\ 5/5/2019\r\n
+comment0.text=\r\n\ Class\ for\ individual\ food\ items\r\n\r\n\ @author\ Yupu\ Li\r\n\ @version\ 7/5/2019\r\n
 comment1.params=
 comment1.target=Items()
 comment1.text=\r\n\ Default\ constructor\ for\ objects\ of\ class\ Items\r\n
 comment10.params=newOnDeal
 comment10.target=void\ setOnDeal(boolean)
 comment10.text=\r\n\ Setter\ method\ for\ onDeal\r\n
+comment11.params=
+comment11.target=java.lang.String\ toString()
 comment2.params=newName\ newDescription\ newPrice\ newOnDeal
 comment2.target=Items(java.lang.String,\ java.lang.String,\ double,\ boolean)
 comment2.text=\r\n\ Parameterized\ constructor\ for\ objects\ of\ class\ Items\r\n
@@ -31,4 +33,4 @@ comment8.text=\r\n\ Setter\ method\ for\ description\r\n
 comment9.params=newPrice
 comment9.target=void\ setPrice(double)
 comment9.text=\r\n\ Setter\ method\ for\ price\r\n
-numComments=11
+numComments=12

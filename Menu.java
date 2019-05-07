@@ -24,8 +24,12 @@ public class Menu
     {
         items = newItems;
     }
+    
+    public void showMenu(){
+        System.out.
+    }
 
-    public addItems(Items item){
+    public void addItems(Items item){
         boolean existed=false;
         for(int i :  items){
             if(item == items.get(i)){
@@ -38,15 +42,16 @@ public class Menu
             items.add(item);
         }
     }
-    public removeItems(Items item){
+    public void removeItems(Item item){
         boolean existed=false;
-        for(int i :  items){
-            if(item == items.get(i)){
+        ArrayList<Items> items= item;
+        for(int i : items){
+            if(item.equalitems.get(i)){
                existed=true;
             }
         }
         if(existed){
-            items.remove(i);
+            items.remove(item);
             System.out.println("This item has been removed successfully!");
         }else{
             System.out.println("This item does not exist! Please try again!");

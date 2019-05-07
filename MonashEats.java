@@ -100,15 +100,15 @@ public class MonashEats
             else if (ans == 2)//2 sign up
             {
                 System.out.println("Please enter your fname");
-                fname=input.nextLine();
+                String fname=input.nextLine();
                 System.out.println("Please enter your lname");
-                lname=input.nextLine();
+                String lname=input.nextLine();
                 System.out.println("Please enter your phoneNumber");
-                phoneNumber=input.nextInt();
+                int phoneNumber=input.nextInt();
                 System.out.println("Please enter your email");
-                email=input.nextLine();
+                String email=input.nextLine();
                 System.out.println("Please enter your password");
-                password=input.nextLine();
+                String password=input.nextLine();
                 input.nextLine();
                 User user = new User();
                 user.setFirstName(fname);

@@ -28,7 +28,7 @@ public class RestaurantList
     {
         restaurantList = newRestaurantList;
     }
-    public addRestaurant(Restaurant restaurant){
+    public void addRestaurant(Restaurant restaurant){
         boolean existed=false;
         for(int i :  restaurantList){
             if(restaurant == restaurantList.get(i)){
