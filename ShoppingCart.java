@@ -34,6 +34,7 @@ public class ShoppingCart
         {
             items.add(item);
             totalPrice = calculatePriceForCart();
+            System.out.println(item.getItemName() + " added to cart");
             return items.size();
         }
         return -1;
@@ -94,15 +95,17 @@ public class ShoppingCart
     
     public void showCartDetails()
     {
-        System.out.println("Order details:");
+        System.out.println("Items in cart:");
         System.out.println();
-        System.out.println("1. Curry Chicken - $4");
-        System.out.println();
-        System.out.println("Order Subotal: $10");
+        for (int i = 0 ; i < items.size() ; i++)
+        {
+            System.out.println((i+1) + ". " + items.get(i).getItemName() + " - $" + items.get(i).getPrice());
+        }
+        double total = totalPrice + 5;
         System.out.println("Delivery Charges: $5");
-        System.out.println("Order Total: $15");
+        System.out.println("Order Total: $" + total);
         System.out.println("Coupons: $0");
-        System.out.println("Balance: $15");
+        System.out.println("Balance: $" + total);
         System.out.println();
         System.out.println("Please select your payment option:");
         System.out.println();
@@ -110,4 +113,5 @@ public class ShoppingCart
         System.out.println("2. Coupons");
         
     }
+    
 }

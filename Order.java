@@ -115,6 +115,7 @@ public class Order
        System.out.println();
        System.out.println("Order Total\t\t\t\t\t$9");
    }
+   
    public void orderDetails()
    {
        System.out.println("========================================================");
