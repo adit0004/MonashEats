@@ -22,16 +22,4 @@ public class OrderList
     {
         orders = newOrders;
     }
-    
-    public void showAllOrders()
-    {
-        System.out.println("Showing all orders");
-        System.out.println("--------------------------------------------------");
-        System.out.println();
-        System.out.println("1.\tCustomer - Aditya\n\tOrder Date - 1/5/2019\n\tOrder Status - Delivered\n\tPayment Status - Paid");
-        System.out.println("2.\tCustomer - Lyman\n\tOrder Date - 2/5/2019\n\tOrder Status - Delivered\n\tPayment Status - Paid");
-        System.out.println("3.\tCustomer - Moon\n\tOrder Date - 3/5/2019\n\tOrder Status - Delivered\n\tPayment Status - Paid");
-        System.out.println("4.\tCustomer - Aditya\n\tOrder Date - 5/5/2019\n\tOrder Status - Delivered\n\tPayment Status - Paid");
-        System.out.println("5.\tCustomer - Lyman\n\tOrder Date - 7/5/2019\n\tOrder Status - Preparing\n\tPayment Status - Unpaid");
-    }
 }

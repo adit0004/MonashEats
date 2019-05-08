@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=User
-comment0.text=\n\ Parent\ class\ for\ users\n\n\ @author\ Aditya\ Kumar\n\ @version\ 5/5/2019\n
+comment0.text=\r\n\ Parent\ class\ for\ users\r\n\r\n\ @author\ Aditya\ Kumar\r\n\ @version\ 5/5/2019\r\n
 comment1.params=
 comment1.target=User()
-comment1.text=\n\ Default\ constructor\ for\ user\n
+comment1.text=\r\n\ Default\ constructor\ for\ user\r\n
 comment10.params=newPhoneNumber
 comment10.target=void\ setPhoneNumber(java.lang.String)
 comment11.params=newEmail
@@ -12,7 +12,7 @@ comment12.params=newPassword
 comment12.target=void\ setPassword(java.lang.String)
 comment2.params=newFirstName\ newLastName\ newPhoneNumber\ newEmail\ newPassword
 comment2.target=User(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
-comment2.text=\n\ Parameterized\ constructor\n
+comment2.text=\r\n\ Parameterized\ constructor\r\n
 comment3.params=
 comment3.target=java.lang.String\ getFirstName()
 comment4.params=

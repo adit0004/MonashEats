@@ -80,7 +80,7 @@ public class MonashEats
                     {
                         //Customer account
                         System.out.println("========================================================");
-                        System.out.println("           Customer Home");
+                        System.out.println("		   Customer Home");
                         System.out.println("========================================================");
                         System.out.println();
                         System.out.println("Please select one of the following options:");
@@ -94,40 +94,6 @@ public class MonashEats
                         homeAns = input.nextInt();
                         input.nextLine(); //Clear the buffer
                         
-                        if (homeAns == 1)
-                        {
-                            int restaurantAns = 0;
-                            do
-                            {
-                                System.out.println("========================================================");
-                                System.out.println("                Viewing Restaurants");
-                                System.out.println("========================================================");
-                                System.out.println();
-                                System.out.println("Please select a restaurant to see their menu:");
-                                System.out.println();
-                                System.out.println("1.\tRestaurant A (Rating: 4.3)");
-                                System.out.println("\t123 Street Name, Caulfield East, 3000");
-                                System.out.println();
-                                System.out.println("2.\tRestaurant B (Rating: 3.0)");
-                                System.out.println("\t456 Street Name, Caulfield East, 3000");
-                                System.out.println();
-                                System.out.println("3.\tRestaurant C (Rating: 5.0)");
-                                System.out.println("\t789 Street Name, Caulfield East, 3000");
-                                
-                                restaurantAns = input.nextInt();
-                                input.nextLine();
-                                
-                                System.out.println("========================================================");
-                                System.out.println("                    Restaurant A");
-                                System.out.println("      123 Street Name, Caulfield East, 3000");
-                                System.out.println("========================================================");
-                                System.out.println("");
-                                System.out.println("Please select an item to add to cart:");
-                                System.out.println("1.\tFood Name: Curry Chicken\n\tPrice: $5");
-                                System.out.println("\tDescription: It is curry + chicken\n\tDeal: The price will be $4 instead");
-                                
-                            } while (restaurantAns != 0);
-                        }
                     } while (homeAns != 5);
                 }
             }

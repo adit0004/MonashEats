@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=MonashEats
-comment0.text=\n\ The\ control\ class\ for\ Monash\ Eats.\ This\ class\ also\ behaves\ like\ the\ boundary\ class,\ handling\ IO\ between\ the\ user\ and\ the\ system.\n\ @author\ Aditya\ Kumar\n\ @version\ 5/5/2019\ \n
+comment0.text=\r\n\ The\ control\ class\ for\ Monash\ Eats.\ This\ class\ also\ behaves\ like\ the\ boundary\ class,\ handling\ IO\ between\ the\ user\ and\ the\ system.\r\n\ @author\ Aditya\ Kumar\r\n\ @version\ 5/5/2019\ \r\n
 comment1.params=
 comment1.target=MonashEats()
-comment1.text=\n\ Default\ constructor\ for\ MonashEats\n
+comment1.text=\r\n\ Default\ constructor\ for\ MonashEats\r\n
 comment2.params=newUserList\ newRestaurantList\ newShoppingCart
 comment2.target=MonashEats(java.util.ArrayList,\ RestaurantList,\ ShoppingCart)
 comment3.params=

@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=RestaurantList
-comment0.text=\n\ This\ class\ contains\ a\ list\ of\ restaurants\n
+comment0.text=\r\n\ This\ class\ contains\ a\ list\ of\ restaurants\r\n
 comment1.params=
 comment1.target=RestaurantList()
-comment1.text=\n\ Default\ constructor\ for\ RestaurantList\n
+comment1.text=\r\n\ Default\ constructor\ for\ RestaurantList\r\n
 comment2.params=newRestaurantList
 comment2.target=RestaurantList(java.util.ArrayList)
-comment2.text=\n\ Parameterized\ constructor\n
+comment2.text=\r\n\ Parameterized\ constructor\r\n
 numComments=3

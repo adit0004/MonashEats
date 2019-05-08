@@ -1,16 +1,14 @@
 #BlueJ class context
 comment0.target=ShoppingCart
-comment0.text=\n\ The\ shopping\ cart\ for\ a\ customer\n\n\ @author\ Aditya\ Kumar\n\ @version\ 5/5/2019\n
+comment0.text=\r\n\ The\ shopping\ cart\ for\ a\ customer\r\n\r\n\ @author\ Aditya\ Kumar\r\n\ @version\ 5/5/2019\r\n
 comment1.params=
 comment1.target=ShoppingCart()
-comment1.text=\n\ Default\ onstructor\ for\ objects\ of\ class\ ShoppingCart\n
+comment1.text=\r\n\ Default\ onstructor\ for\ objects\ of\ class\ ShoppingCart\r\n
 comment10.params=newTotalPrice
 comment10.target=void\ setTotalPrice(double)
-comment11.params=
-comment11.target=void\ showCartDetails()
 comment2.params=oldItems\ newTotalPrice
 comment2.target=ShoppingCart(java.util.ArrayList,\ double)
-comment2.text=\n\ Parameterized\ constructor\ for\ objects\ of\ class\ ShoppingCart\n
+comment2.text=\r\n\ Parameterized\ constructor\ for\ objects\ of\ class\ ShoppingCart\r\n
 comment3.params=item
 comment3.target=int\ addItems(Items)
 comment4.params=itemIndex
@@ -25,4 +23,4 @@ comment8.params=
 comment8.target=double\ getTotalPrice()
 comment9.params=newItems
 comment9.target=void\ setItemList(java.util.ArrayList)
-numComments=12
+numComments=11

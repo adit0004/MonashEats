@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=Owner
-comment0.text=\n\ Class\ for\ owner\ user\n\n\ @author\ Aditya\ Kumar\n\ @version\ 5/5/2019\n
+comment0.text=\r\n\ Class\ for\ owner\ user\r\n\r\n\ @author\ Aditya\ Kumar\r\n\ @version\ 5/5/2019\r\n
 comment1.params=
 comment1.target=Owner()
-comment1.text=\n\ Default\ constructor\ should\ create\ a\ default\ administrator\n
+comment1.text=\r\n\ Default\ constructor\ should\ create\ a\ default\ administrator\r\n
 comment2.params=newFirstName\ newLastName\ newPhoneNumber\ newEmailAddress\ newPassword
 comment2.target=Owner(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
-comment2.text=\n\ Non-default\ constructor\n
+comment2.text=\r\n\ Non-default\ constructor\r\n
 numComments=3
