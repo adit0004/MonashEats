@@ -104,7 +104,7 @@ public class MonashEats
                 System.out.println("Please enter your lname");
                 String lname=input.nextLine();
                 System.out.println("Please enter your phoneNumber");
-                int phoneNumber=input.nextInt();
+                String phoneNumber=input.nextLine();
                 System.out.println("Please enter your email");
                 String email=input.nextLine();
                 System.out.println("Please enter your password");

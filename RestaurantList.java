@@ -30,8 +30,8 @@ public class RestaurantList
     }
     public void addRestaurant(Restaurant restaurant){
         boolean existed=false;
-        for(int i :  restaurantList){
-            if(restaurant == restaurantList.get(i)){
+        for(Restaurant i :  restaurantList){
+            if(restaurant == i){
                existed=true;
             }
         }
@@ -41,10 +41,10 @@ public class RestaurantList
             restaurantList.add(restaurant);
         }
     }
-    public RestaurantList removeRestaurant(Restaurant restaurant,ArrayList<Restaurant> rList){
+    public void removeRestaurant(Restaurant restaurant,ArrayList<Restaurant> rList){
         boolean existed=false;
-        for(int i : rList){
-            if(restaurant == rList.get(i)){
+        for(Restaurant i :  restaurantList){
+            if(restaurant == i){
                existed=true;
             }
         }
@@ -54,6 +54,6 @@ public class RestaurantList
         }else{
             System.out.println("This restaurant does not exist! Please try again!");
         }
-        return rList;       
+        //return rList;       
     }
 }
