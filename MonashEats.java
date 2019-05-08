@@ -23,19 +23,19 @@ public class MonashEats
         restaurantList = new RestaurantList();
         shoppingCart = new ShoppingCart();
     }
-    
+
     public MonashEats(ArrayList<User> newUserList, RestaurantList newRestaurantList, ShoppingCart newShoppingCart)
     {
         userList = newUserList;
         restaurantList = newRestaurantList;
         shoppingCart = newShoppingCart;
     }
-    
+
     public void startProgram() 
     {
         int ans = 0;
         Scanner input = new Scanner(System.in);
-        
+
         do
         {
             System.out.println("========================================================");
@@ -43,7 +43,7 @@ public class MonashEats
             System.out.println("========================================================");
             System.out.println();
             System.out.println("Please select one of the following options:\n\n1. Login\n2. Sign-up\n3. Exit");
-            
+
             ans = input.nextInt();
             input.nextLine(); //Clear the buffer
             //1:login
@@ -59,10 +59,10 @@ public class MonashEats
                 email = input.nextLine();
                 System.out.println("Please enter your password:");
                 password = input.nextLine();
-                
+
                 // To do:
                 // Process this login
-                
+
                 if (email.equals("admin1@monash.edu")&&password.equals("Admin"))
                 {
                     Admin admin = new Admin();
@@ -99,11 +99,11 @@ public class MonashEats
                     System.out.println();
                     String option = input.nextLine();
                     /**switch(option){
-                        case 1:break;
-                        case 2:break;
-                        case 3:break;
-                        case 4:startProgram();break;
-                        default: System.out.println("Wrong!");
+                    case 1:break;
+                    case 2:break;
+                    case 3:break;
+                    case 4:startProgram();break;
+                    default: System.out.println("Wrong!");
                     }*/
                     if (option.equals("1"))
                     {
@@ -113,7 +113,7 @@ public class MonashEats
                         System.out.println();
                         System.out.println("Order Details:");
                         System.out.println();
-                        
+
                         input.nextLine();
 
                     }
@@ -128,9 +128,9 @@ public class MonashEats
                         System.out.println("1. Update name");
                         System.out.println("2. Update address");
                         System.out.println("3. go back");
-                        
+
                         input.nextLine();
-                        
+
                     }
                     else if(option.equals("3"))
                     {
@@ -142,71 +142,71 @@ public class MonashEats
                         System.out.println();
                         System.out.println("Please select a restaurant to manage menu for:");
                         System.out.println("Restruant Details: ");
-                }
-                else if  (email.equals("customer@monash.edu")&&password.equals("Customer"))
-                {
-                    int homeAns = 0;
-                    do
+                    }
+                    else if  (email.equals("customer@monash.edu")&&password.equals("Customer"))
                     {
-                        //Customer account
-                        System.out.println("========================================================");
-                        System.out.println("           Customer Home");
-                        System.out.println("========================================================");
-                        System.out.println();
-                        System.out.println("Please select one of the following options:");
-                        System.out.println();
-                        System.out.println("1. View restaurants");
-                        System.out.println("2. View current cart");
-                        System.out.println("3. View profile");
-                        System.out.println("4. View past orders");
-                        System.out.println("5. Logout");
-                        
-                        homeAns = input.nextInt();
-                        input.nextLine(); //Clear the buffer
-                        
-                        if (homeAns == 1)
+                        int homeAns = 0;
+                        do
                         {
-                            int restaurantAns = 0;
-                            do
+                            //Customer account
+                            System.out.println("========================================================");
+                            System.out.println("           Customer Home");
+                            System.out.println("========================================================");
+                            System.out.println();
+                            System.out.println("Please select one of the following options:");
+                            System.out.println();
+                            System.out.println("1. View restaurants");
+                            System.out.println("2. View current cart");
+                            System.out.println("3. View profile");
+                            System.out.println("4. View past orders");
+                            System.out.println("5. Logout");
+
+                            homeAns = input.nextInt();
+                            input.nextLine(); //Clear the buffer
+
+                            if (homeAns == 1)
                             {
-                                System.out.println("========================================================");
-                                System.out.println("                Viewing Restaurants");
-                                System.out.println("========================================================");
-                                System.out.println();
-                                System.out.println("Please select a restaurant to see their menu:");
-                                System.out.println();
-                                System.out.println("1.\tRestaurant A (Rating: 4.3)");
-                                System.out.println("\t123 Street Name, Caulfield East, 3000");
-                                System.out.println();
-                                System.out.println("2.\tRestaurant B (Rating: 3.0)");
-                                System.out.println("\t456 Street Name, Caulfield East, 3000");
-                                System.out.println();
-                                System.out.println("3.\tRestaurant C (Rating: 5.0)");
-                                System.out.println("\t789 Street Name, Caulfield East, 3000");
-                                
-                                restaurantAns = input.nextInt();
-                                input.nextLine();
-                                
-                                System.out.println("========================================================");
-                                System.out.println("                    Restaurant A");
-                                System.out.println("      123 Street Name, Caulfield East, 3000");
-                                System.out.println("========================================================");
-                                System.out.println("");
-                                System.out.println("Please select an item to add to cart:");
-                                System.out.println("1.\tFood Name: Curry Chicken\n\tPrice: $5");
-                                System.out.println("\tDescription: It is curry + chicken\n\tDeal: The price will be $4 instead");
-                                
-                            } while (restaurantAns != 0);
-                        }
-                    } while (homeAns != 5);
+                                int restaurantAns = 0;
+                                do
+                                {
+                                    System.out.println("========================================================");
+                                    System.out.println("                Viewing Restaurants");
+                                    System.out.println("========================================================");
+                                    System.out.println();
+                                    System.out.println("Please select a restaurant to see their menu:");
+                                    System.out.println();
+                                    System.out.println("1.\tRestaurant A (Rating: 4.3)");
+                                    System.out.println("\t123 Street Name, Caulfield East, 3000");
+                                    System.out.println();
+                                    System.out.println("2.\tRestaurant B (Rating: 3.0)");
+                                    System.out.println("\t456 Street Name, Caulfield East, 3000");
+                                    System.out.println();
+                                    System.out.println("3.\tRestaurant C (Rating: 5.0)");
+                                    System.out.println("\t789 Street Name, Caulfield East, 3000");
+
+                                    restaurantAns = input.nextInt();
+                                    input.nextLine();
+
+                                    System.out.println("========================================================");
+                                    System.out.println("                    Restaurant A");
+                                    System.out.println("      123 Street Name, Caulfield East, 3000");
+                                    System.out.println("========================================================");
+                                    System.out.println("");
+                                    System.out.println("Please select an item to add to cart:");
+                                    System.out.println("1.\tFood Name: Curry Chicken\n\tPrice: $5");
+                                    System.out.println("\tDescription: It is curry + chicken\n\tDeal: The price will be $4 instead");
+
+                                } while (restaurantAns != 0);
+                            }
+                        } while (homeAns != 5);
+                    }
+                    else{
+                        System.out.println("This account is not valid! Please Try again!\n");
+                        startProgram();
+                    }
                 }
-                else{
-                    System.out.println("This account is not valid! Please Try again!\n");
-                    startProgram();
-                }
-            }
-            else if (ans == 2)//2 sign up
-            {
+                else if (ans == 2)//2 sign up
+                {
                     System.out.println("Please enter your fname");
                     String fname=input.nextLine();
                     System.out.println("Please enter your lname");
@@ -248,13 +248,13 @@ public class MonashEats
             }
         } while( ans != 3 );
     }
-    
+
     public int getUserListSize()
     {
         return userList.size();
     }
-    
-    public String ownerHome(String inputAddress)
+
+    public String getAccountType(String inputAddress)
     {
         String accountType = null;
         int userListSize = getUserListSize();
@@ -281,7 +281,30 @@ public class MonashEats
         }
         return accountType;
     }
-    
+
+    public void manageRestaurant()
+    {
+        System.out.println("========================================================");
+        System.out.println("            Manage restaurants");
+        System.out.println("========================================================");
+        System.out.println();
+        System.out.println("Restaurants Details:");
+        System.out.println();
+        
+        System.out.println("Please choose one of the options");
+        System.out.println();
+        System.out.println("1. Add a restaurant");
+        System.out.println("2. Remove a restaurant");
+        System.out.println("3. Edit restaurant");
+        System.out.println("4. go back");
+        
+        System.out.println("Please choose one of the restaurants");
+        
+        Scanner input = new Scanner(System.in);
+        input.nextLine();
+        
+    }
+
     public void manageRes(){
         System.out.println("========================================================");
         System.out.println("           Admin Home");
@@ -310,11 +333,11 @@ public class MonashEats
             default:break;
         }
     }
-    
+
     public void manageAcc(){
         startProgram();
     }
-    
+
     public static void main(String[] args)
     {
         MonashEats monashEats = new MonashEats();
