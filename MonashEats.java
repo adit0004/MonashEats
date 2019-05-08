@@ -247,7 +247,41 @@ public class MonashEats
                 }
             }
         } while( ans != 3 );
-    }       
+    }
+    
+    public int getUserListSize()
+    {
+        return userList.size();
+    }
+    
+    public String ownerHome(String inputAddress)
+    {
+        String accountType = null;
+        int userListSize = getUserListSize();
+        inputAddress = inputAddress.trim().toLowerCase();
+        if (userListSize != 0)
+        {
+            for(int i = 0; i < userListSize; i++)
+            {
+                String email = userList.get(i).getEmail();
+                if (inputAddress.equals(email))
+                {
+                    accountType = userList.get(i).getAccountType();
+                    break;
+                }
+            }
+            if (accountType == null)
+            {
+                System.out.println("Don't have the account, please register first");
+            }
+        }
+        else
+        {
+            System.out.println("Don't have the account, please register first");
+        }
+        return accountType;
+    }
+    
     public void manageRes(){
         System.out.println("========================================================");
         System.out.println("           Admin Home");
@@ -276,6 +310,7 @@ public class MonashEats
             default:break;
         }
     }
+    
     public void manageAcc(){
         startProgram();
     }
