@@ -55,15 +55,23 @@ public class MonashEats
                 System.out.println("\t\t\tLogin");
                 System.out.println("========================================================");
                 System.out.println();
+                
                 System.out.println("Please enter your email address:");
-                email = input.nextLine();
+                email = input.nextLine().trim();
                 System.out.println("Please enter your password:");
-                password = input.nextLine();
+                password = input.nextLine().trim();
 
                 // To do:
                 // Process this login
 
-                if (email.equals("admin1@monash.edu")&&password.equals("Admin"))
+                int indexOfAccount = getIndexOfAccount(email);
+                if (indexOfAccount == -1) //if userList do not have the account
+                {
+                }
+                String accountType = userList.get(indexOfAccount).getAccountType().toLowerCase();
+                String rightPassword = userList.get(indexOfAccount).getPassword();
+                
+                if (accountType.equals("admin")&&password.equals("Admin"))
                 {
                     Admin admin = new Admin();
                     System.out.println("========================================================");
@@ -84,67 +92,67 @@ public class MonashEats
                         default: System.out.println("Wrong!");
                     }
                 }
-                else if (email.equals("owner@monash.edu")&&password.equals("Owner"))
+                else if (accountType.equals("owner")&&password.equals("Owner"))
                 {
                     ownerHome();
 
                 }
-                else if  (email.equals("customer@monash.edu")&&password.equals("Customer"))
+                else if (accountType.equals("customer")&&password.equals("Customer"))
                 {
-                        int homeAns = 0;
-                        do
+                    int homeAns = 0;
+                    do
+                    {
+                        //Customer account
+                        System.out.println("========================================================");
+                        System.out.println("           Customer Home");
+                        System.out.println("========================================================");
+                        System.out.println();
+                        System.out.println("Please select one of the following options:");
+                        System.out.println();
+                        System.out.println("1. View restaurants");
+                        System.out.println("2. View current cart");
+                        System.out.println("3. View profile");
+                        System.out.println("4. View past orders");
+                        System.out.println("5. Logout");
+
+                        homeAns = input.nextInt();
+                        input.nextLine(); //Clear the buffer
+
+                        if (homeAns == 1)
                         {
-                            //Customer account
-                            System.out.println("========================================================");
-                            System.out.println("           Customer Home");
-                            System.out.println("========================================================");
-                            System.out.println();
-                            System.out.println("Please select one of the following options:");
-                            System.out.println();
-                            System.out.println("1. View restaurants");
-                            System.out.println("2. View current cart");
-                            System.out.println("3. View profile");
-                            System.out.println("4. View past orders");
-                            System.out.println("5. Logout");
-
-                            homeAns = input.nextInt();
-                            input.nextLine(); //Clear the buffer
-
-                            if (homeAns == 1)
+                            int restaurantAns = 0;
+                            do
                             {
-                                int restaurantAns = 0;
-                                do
-                                {
-                                    System.out.println("========================================================");
-                                    System.out.println("                Viewing Restaurants");
-                                    System.out.println("========================================================");
-                                    System.out.println();
-                                    System.out.println("Please select a restaurant to see their menu:");
-                                    System.out.println();
-                                    System.out.println("1.\tRestaurant A (Rating: 4.3)");
-                                    System.out.println("\t123 Street Name, Caulfield East, 3000");
-                                    System.out.println();
-                                    System.out.println("2.\tRestaurant B (Rating: 3.0)");
-                                    System.out.println("\t456 Street Name, Caulfield East, 3000");
-                                    System.out.println();
-                                    System.out.println("3.\tRestaurant C (Rating: 5.0)");
-                                    System.out.println("\t789 Street Name, Caulfield East, 3000");
+                                System.out.println("========================================================");
+                                System.out.println("                Viewing Restaurants");
+                                System.out.println("========================================================");
+                                System.out.println();
+                                System.out.println("Please select a restaurant to see their menu:");
+                                System.out.println();
+                                System.out.println("1.\tRestaurant A (Rating: 4.3)");
+                                System.out.println("\t123 Street Name, Caulfield East, 3000");
+                                System.out.println();
+                                System.out.println("2.\tRestaurant B (Rating: 3.0)");
+                                System.out.println("\t456 Street Name, Caulfield East, 3000");
+                                System.out.println();
+                                System.out.println("3.\tRestaurant C (Rating: 5.0)");
+                                System.out.println("\t789 Street Name, Caulfield East, 3000");
 
-                                    restaurantAns = input.nextInt();
-                                    input.nextLine();
+                                restaurantAns = input.nextInt();
+                                input.nextLine();
 
-                                    System.out.println("========================================================");
-                                    System.out.println("                    Restaurant A");
-                                    System.out.println("      123 Street Name, Caulfield East, 3000");
-                                    System.out.println("========================================================");
-                                    System.out.println("");
-                                    System.out.println("Please select an item to add to cart:");
-                                    System.out.println("1.\tFood Name: Curry Chicken\n\tPrice: $5");
-                                    System.out.println("\tDescription: It is curry + chicken\n\tDeal: The price will be $4 instead");
+                                System.out.println("========================================================");
+                                System.out.println("                    Restaurant A");
+                                System.out.println("      123 Street Name, Caulfield East, 3000");
+                                System.out.println("========================================================");
+                                System.out.println("");
+                                System.out.println("Please select an item to add to cart:");
+                                System.out.println("1.\tFood Name: Curry Chicken\n\tPrice: $5");
+                                System.out.println("\tDescription: It is curry + chicken\n\tDeal: The price will be $4 instead");
 
-                                } while (restaurantAns != 0);
-                            }
-                        } while (homeAns != 5);
+                            } while (restaurantAns != 0);
+                        }
+                    } while (homeAns != 5);
                 }
                 else
                 {
@@ -154,45 +162,45 @@ public class MonashEats
             }
             else if (ans == 2)//2 sign up
             {
-                    System.out.println("Please enter your fname");
-                    String fname=input.nextLine();
-                    System.out.println("Please enter your lname");
-                    String lname=input.nextLine();
-                    System.out.println("Please enter your phoneNumber");
-                    String phoneNumber=input.nextLine();
-                    System.out.println("Please enter your email");
-                    String email=input.nextLine();
-                    System.out.println("Please enter your password");
-                    String password=input.nextLine();
-                    //System.out.println("Please enter your password");
-                    input.nextLine();
-                    User user = new User();
-                    user.setFirstName(fname);
-                    user.setLastName(lname);
-                    user.setPhoneNumber(phoneNumber);
-                    user.setEmail(email);
-                    user.setPassword(password);
-                    user.setAccountType("");
-                    userList.add(user);
-                    System.out.println("Register successfully! Turn to login page? [y/n]");
-                    String back= input.nextLine();
-                    input.nextLine();
-                    email = "";
-                    password = "";
-                    if(back.toUpperCase().equals("Y")){
-                        startProgram();
-                    }else{
-                        System.exit(1);                    
-                    }
+                System.out.println("Please enter your fname");
+                String fname=input.nextLine();
+                System.out.println("Please enter your lname");
+                String lname=input.nextLine();
+                System.out.println("Please enter your phoneNumber");
+                String phoneNumber=input.nextLine();
+                System.out.println("Please enter your email");
+                String email=input.nextLine();
+                System.out.println("Please enter your password");
+                String password=input.nextLine();
+                //System.out.println("Please enter your password");
+                input.nextLine();
+                User user = new User();
+                user.setFirstName(fname);
+                user.setLastName(lname);
+                user.setPhoneNumber(phoneNumber);
+                user.setEmail(email);
+                user.setPassword(password);
+                user.setAccountType("");
+                userList.add(user);
+                System.out.println("Register successfully! Turn to login page? [y/n]");
+                String back= input.nextLine();
+                input.nextLine();
+                email = "";
+                password = "";
+                if(back.toUpperCase().equals("Y")){
+                    startProgram();
+                }else{
+                    System.exit(1);                    
+                }
             }
             else if(ans == 3){
-                    System.exit(1);
+                System.exit(1);
             }
-                else
-                {
-                    System.out.println("Invalid input. Please select from one of the menu options.");
-                }
-            
+            else
+            {
+                System.out.println("Invalid input. Please select from one of the menu options.");
+            }
+
         } while( ans != 3 );
     }
 
@@ -201,23 +209,31 @@ public class MonashEats
         return userList.size();
     }
 
-    public String getAccountType(String inputAddress)
+    /**
+     * input an String - email address
+     * get the index of the user who has the same email address in userList
+     * return the index(int)
+     * If userList does not have the eamil address
+     * Show the message "don't have the account"
+     * return the -1
+     */
+    public int getIndexOfAccount(String inputEmail)
     {
-        String accountType = null;
+        int index = -1;
         int userListSize = getUserListSize();
-        inputAddress = inputAddress.trim().toLowerCase();
+        inputEmail = inputEmail.trim().toLowerCase();
         if (userListSize != 0)
         {
             for(int i = 0; i < userListSize; i++)
             {
                 String email = userList.get(i).getEmail();
-                if (inputAddress.equals(email))
+                if (inputEmail.equals(email))
                 {
-                    accountType = userList.get(i).getAccountType();
+                    index = i;
                     break;
                 }
             }
-            if (accountType == null)
+            if (index == -1)
             {
                 System.out.println("Don't have the account, please register first");
             }
@@ -226,9 +242,10 @@ public class MonashEats
         {
             System.out.println("Don't have the account, please register first");
         }
-        return accountType;
+        return index;
     }
 
+    
     public void ownerHome()
     {
         System.out.println("========================================================");
@@ -237,27 +254,37 @@ public class MonashEats
         System.out.println();
         System.out.println("Please select one of the following options:");
         System.out.println();
-        System.out.println("1. Manage orders");
+        System.out.println("1. Manage owner details");
         System.out.println("2. Manage restaurants");
-        System.out.println("3. Manage Menus");
         System.out.println("4. Logout");
         System.out.println();
-        
+
         Scanner input = new Scanner(System.in);
         String option = input.nextLine();
-        
+
         switch(option)
         {
-        case "1": break;
-        case "2": break;
-        case "3": break;
-        case "4": startProgram();break;
-        default: System.out.println("Wrong option! Please input from 1 to 4");
+            case "1":  break;
+            case "2": manageRestaurant(); break;
+            case "3": break;
+            case "4": startProgram();break;
+            default: System.out.println("Wrong option! Please input from 1 to 4");
         }
     }
 
-        public void manageRestaurant()
-        {
+    public void manageOwnerDetails()
+    {
+        System.out.println("========================================================");
+        System.out.println("           Owner Detail");
+        System.out.println("========================================================");
+        System.out.println();
+        //userList.get().getPassword().display();
+        System.out.println();
+        
+    }
+    
+    public void manageRestaurant()
+    {
         System.out.println("========================================================");
         System.out.println("            Manage restaurants");
         System.out.println("========================================================");
@@ -269,17 +296,25 @@ public class MonashEats
         System.out.println();
         System.out.println("1. Add a restaurant");
         System.out.println("2. Remove a restaurant");
-        System.out.println("3. Edit restaurant");
-        System.out.println("4. go back");
-
-        System.out.println("Please choose one of the restaurants");
+        System.out.println("3. Edit restaurant details");
+        System.out.println("4. Manage menu");
+        System.out.println("5. go back");
 
         Scanner input = new Scanner(System.in);
-        input.nextLine();
+        String option = input.nextLine();
 
+        switch(option)
+        {
+            case "1": break;
+            case "2": break;
+            case "3": break;
+            case "4": break;
+            case "5": break;
+            default: System.out.println("Wrong option! Please input from 1 to 5");
         }
+    }
 
-        public void manageRes(){
+    public void manageRes(){
         System.out.println("========================================================");
         System.out.println("           Admin Home");
         System.out.println("========================================================");
@@ -295,26 +330,26 @@ public class MonashEats
         Scanner input = new Scanner(System.in);
         int i =input.nextInt();
         switch(i){
-        case 1:
-        System.out.println("Restaurant Name: ");
-        System.out.println("Restaurant Address: ");
-        System.out.println("Restaurant D added!");
-        break;
-        case 2:break;
-        case 3:break;
-        case 4:break;
-        case 5:break;
-        default:break;
+            case 1:
+            System.out.println("Restaurant Name: ");
+            System.out.println("Restaurant Address: ");
+            System.out.println("Restaurant D added!");
+            break;
+            case 2:break;
+            case 3:break;
+            case 4:break;
+            case 5:break;
+            default:break;
         }
-        }
+    }
 
-        public void manageAcc(){
+    public void manageAcc(){
         startProgram();
-        }
+    }
 
-        public static void main(String[] args)
-        {
+    public static void main(String[] args)
+    {
         MonashEats monashEats = new MonashEats();
         monashEats.startProgram();
-        }
-        }
+    }
+}
