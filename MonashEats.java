@@ -156,18 +156,16 @@ public class MonashEats
                     startProgram();
                 }
             }
-            else if (ans == 2)//2 sign up
+            else if (ans == 2)// 2 sign up
             {
-
+                registerPage();
             }
-            else if(ans == 3){
+            else if(ans == 3) // 3 log out
                 System.exit(1);
-            }
             else
             {
-                System.out.println("Invalid input. Please select from one of the menu options.");
+                System.out.println("Invalid input. Please enter from 1 to 3.");
             }
-
         } while( ans != 3 );
     }
 
@@ -222,6 +220,51 @@ public class MonashEats
 
     }
 
+    public void loginPage()
+    {
+        System.out.println("========================================================");
+        System.out.println("\t\t\tLogin");
+        System.out.println("========================================================");
+        System.out.println();
+
+        Scanner input = new Scanner(System.in);
+        String email = "";
+        String password = "";
+        int indexOfAccount = -1;
+        String accountType = "";
+        String rightPassword = "";
+
+        do
+        {
+            do
+            {
+                System.out.println("Please enter your email address:");
+                email = input.nextLine().trim();
+                System.out.println("Please enter your password:");
+                password = input.nextLine().trim();
+
+                indexOfAccount = getIndexOfAccount(email);
+                
+                if(indexOfAccount == -1)
+                    System.out.println("Wrong account! Please input again.");
+                    
+            }while(indexOfAccount == -1); //Check the email is exist in user list
+
+            rightPassword = userList.get(indexOfAccount).getPassword();
+            
+        }while(password.equals(rightPassword)); //Check the password is right
+        
+        accountType = userList.get(indexOfAccount).getAccountType().toLowerCase();
+
+        switch(accountType)
+        {
+            case "admin": break;
+            case "owner": ownerHome(); break;
+            case "customer": break; 
+        }
+
+    }
+
     public void registerPage()
     {
         Scanner input = new Scanner(System.in);
@@ -247,7 +290,7 @@ public class MonashEats
                 accountType = "customer";
             else
                 System.out.println("Wrong input! Please enter option 1 or 2");
-        }while(option.equals("1") || option.equals("2"));
+        }while(option.equals("1") && option.equals("2"));
 
         System.out.println("Please enter your first name");
         String fname = input.nextLine();
@@ -263,7 +306,7 @@ public class MonashEats
 
         System.out.println("Please enter your password");
         String password = input.nextLine();
-        
+
         String address = "";
         if(accountType.equals("customer"))
         {
@@ -275,17 +318,14 @@ public class MonashEats
 
         User user = new User(fname, lname, phoneNumber, email, password, accountType);
         userList.add(user);
-        
+
         System.out.println("Register successfully! Turn to login page? [y/n]");
         String back= input.nextLine();
-        input.nextLine();
-        email = "";
-        password = "";
-        if(back.toUpperCase().equals("Y")){
-            startProgram();
-        }else{
+
+        if(back.toUpperCase().equals("Y"))
+            loginPage();
+        else
             System.exit(1);                    
-        }
     }
 
     public void ownerHome()
