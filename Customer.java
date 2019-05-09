@@ -4,8 +4,8 @@
  */
 public class Customer extends User
 {
-    private boolean isStudent;
     private String address;
+    private boolean isStudent;
     
     /**
      * Customer class default constructor
@@ -21,11 +21,11 @@ public class Customer extends User
      * Customer class non-default constructor
      */
     public Customer(String newFirstName, String newLastName, String NewphoneNumber,String newEmail,
-                String newPassword, String newAcountType, boolean newIsStudent, String newAddress)
+                String newPassword, String newAcountType, String newAddress, boolean newIsStudent)
     {
         super(newFirstName,newLastName,NewphoneNumber,newEmail,newPassword,newAcountType);
-        isStudent = newIsStudent;
         address = newAddress;
+        isStudent = newIsStudent;
     }
     
     /**

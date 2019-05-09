@@ -38,11 +38,7 @@ public class MonashEats
 
         do
         {
-            System.out.println("========================================================");
-            System.out.println("\t\tWelcome to Monash Eats");
-            System.out.println("========================================================");
-            System.out.println();
-            System.out.println("Please select one of the following options:\n\n1. Login\n2. Sign-up\n3. Exit");
+            welcomePage();
 
             ans = input.nextInt();
             input.nextLine(); //Clear the buffer
@@ -55,7 +51,7 @@ public class MonashEats
                 System.out.println("\t\t\tLogin");
                 System.out.println("========================================================");
                 System.out.println();
-                
+
                 System.out.println("Please enter your email address:");
                 email = input.nextLine().trim();
                 System.out.println("Please enter your password:");
@@ -70,7 +66,7 @@ public class MonashEats
                 }
                 String accountType = userList.get(indexOfAccount).getAccountType().toLowerCase();
                 String rightPassword = userList.get(indexOfAccount).getPassword();
-                
+
                 if (accountType.equals("admin")&&password.equals("Admin"))
                 {
                     Admin admin = new Admin();
@@ -162,36 +158,7 @@ public class MonashEats
             }
             else if (ans == 2)//2 sign up
             {
-                System.out.println("Please enter your fname");
-                String fname=input.nextLine();
-                System.out.println("Please enter your lname");
-                String lname=input.nextLine();
-                System.out.println("Please enter your phoneNumber");
-                String phoneNumber=input.nextLine();
-                System.out.println("Please enter your email");
-                String email=input.nextLine();
-                System.out.println("Please enter your password");
-                String password=input.nextLine();
-                //System.out.println("Please enter your password");
-                input.nextLine();
-                User user = new User();
-                user.setFirstName(fname);
-                user.setLastName(lname);
-                user.setPhoneNumber(phoneNumber);
-                user.setEmail(email);
-                user.setPassword(password);
-                user.setAccountType("");
-                userList.add(user);
-                System.out.println("Register successfully! Turn to login page? [y/n]");
-                String back= input.nextLine();
-                input.nextLine();
-                email = "";
-                password = "";
-                if(back.toUpperCase().equals("Y")){
-                    startProgram();
-                }else{
-                    System.exit(1);                    
-                }
+
             }
             else if(ans == 3){
                 System.exit(1);
@@ -245,7 +212,82 @@ public class MonashEats
         return index;
     }
 
-    
+    public void welcomePage()
+    {
+        System.out.println("========================================================");
+        System.out.println("\t\tWelcome to Monash Eats");
+        System.out.println("========================================================");
+        System.out.println();
+        System.out.println("Please select one of the following options:\n\n1. Login\n2. Sign-up\n3. Exit");
+
+    }
+
+    public void registerPage()
+    {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("========================================================");
+        System.out.println("\t\tWelcome to register a Monash Eats account");
+        System.out.println("========================================================");
+        System.out.println();
+
+        System.out.println("What type of account do you want to register?");
+        System.out.println("1. Owner");
+        System.out.println("2. Customer");
+        System.out.println("Please enter the option 1 or 2");
+
+        String option = "";
+        String accountType = "";
+        do
+        {
+            option = input.nextLine();
+            if (option.equals("1"))
+                accountType = "owner";
+            else if(option.equals("2"))
+                accountType = "customer";
+            else
+                System.out.println("Wrong input! Please enter option 1 or 2");
+        }while(option.equals("1") || option.equals("2"));
+
+        System.out.println("Please enter your first name");
+        String fname = input.nextLine();
+
+        System.out.println("Please enter your last name");
+        String lname = input.nextLine();
+
+        System.out.println("Please enter your phone number");
+        String phoneNumber = input.nextLine();
+
+        System.out.println("Please enter your email");
+        String email = input.nextLine();
+
+        System.out.println("Please enter your password");
+        String password = input.nextLine();
+        
+        String address = "";
+        if(accountType.equals("customer"))
+        {
+            System.out.println("Please enter your address");
+            address = input.nextLine();
+            User user = new Customer(fname, lname, phoneNumber, email, password, accountType, address, false);
+            userList.add(user);
+        }
+
+        User user = new User(fname, lname, phoneNumber, email, password, accountType);
+        userList.add(user);
+        
+        System.out.println("Register successfully! Turn to login page? [y/n]");
+        String back= input.nextLine();
+        input.nextLine();
+        email = "";
+        password = "";
+        if(back.toUpperCase().equals("Y")){
+            startProgram();
+        }else{
+            System.exit(1);                    
+        }
+    }
+
     public void ownerHome()
     {
         System.out.println("========================================================");
@@ -280,9 +322,9 @@ public class MonashEats
         System.out.println();
         //userList.get().getPassword().display();
         System.out.println();
-        
+
     }
-    
+
     public void manageRestaurant()
     {
         System.out.println("========================================================");
