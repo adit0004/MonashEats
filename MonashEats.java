@@ -45,12 +45,10 @@ public class MonashEats
             //1:login
             if (ans == 1)
             {
+                loginPage();
+
                 String email = "";
                 String password = "";
-                System.out.println("========================================================");
-                System.out.println("\t\t\tLogin");
-                System.out.println("========================================================");
-                System.out.println();
 
                 System.out.println("Please enter your email address:");
                 email = input.nextLine().trim();
@@ -61,9 +59,6 @@ public class MonashEats
                 // Process this login
 
                 int indexOfAccount = getIndexOfAccount(email);
-                if (indexOfAccount == -1) //if userList do not have the account
-                {
-                }
                 String accountType = userList.get(indexOfAccount).getAccountType().toLowerCase();
                 String rightPassword = userList.get(indexOfAccount).getPassword();
 
@@ -244,16 +239,16 @@ public class MonashEats
                 password = input.nextLine().trim();
 
                 indexOfAccount = getIndexOfAccount(email);
-                
+
                 if(indexOfAccount == -1)
                     System.out.println("Wrong account! Please input again.");
-                    
+
             }while(indexOfAccount == -1); //Check the email is exist in user list
 
             rightPassword = userList.get(indexOfAccount).getPassword();
-            
+
         }while(password.equals(rightPassword)); //Check the password is right
-        
+
         accountType = userList.get(indexOfAccount).getAccountType().toLowerCase();
 
         switch(accountType)
@@ -338,30 +333,41 @@ public class MonashEats
         System.out.println();
         System.out.println("1. Manage owner details");
         System.out.println("2. Manage restaurants");
-        System.out.println("4. Logout");
+        System.out.println("3. Logout");
         System.out.println();
 
         Scanner input = new Scanner(System.in);
-        String option = input.nextLine();
+
+        String option = input.nextLine();// loop need to be added
 
         switch(option)
         {
             case "1":  break;
             case "2": manageRestaurant(); break;
-            case "3": break;
-            case "4": startProgram();break;
+            case "3": startProgram();break;
             default: System.out.println("Wrong option! Please input from 1 to 4");
         }
     }
 
-    public void manageOwnerDetails()
+    public void manageAccountDetails(int index)
     {
         System.out.println("========================================================");
-        System.out.println("           Owner Detail");
+        System.out.println("           Account Detail");
         System.out.println("========================================================");
         System.out.println();
-        //userList.get().getPassword().display();
+
+        String accountType = userList.get(index).getAccountType();
+        if(accountType.equals("customer"))
+            userList.get(index).display();
         System.out.println();
+        System.out.println("Which attribute do you want to change?");
+        System.out.println("1. First name ");
+        System.out.println("2. Last name ");
+        System.out.println("3. Phone number ");
+        System.out.println("4. email ");
+        System.out.println("5. password ");
+        if(accountType.equals("customer"))
+        {}
 
     }
 
@@ -387,7 +393,7 @@ public class MonashEats
 
         switch(option)
         {
-            case "1": break;
+            case "1":  break;
             case "2": break;
             case "3": break;
             case "4": break;
