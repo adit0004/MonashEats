@@ -29,32 +29,4 @@ public class Menu
         System.out.println();
     }
 
-    public void addItems(Items item){
-        boolean existed=false;
-        for(Items i :  items){
-            if(item == i){
-               existed=true;
-            }
-        }
-        if(existed){
-            System.out.println("This item is existed! Please try again!");
-        }else{
-            items.add(item);
-        }
-    }
-    public void removeItems(Items item){
-        boolean existed=false;
-        //ArrayList<Items> items= item;
-        for(Items i :  items){
-            if(item == i){
-               existed=true;
-            }
-        }
-        if(existed){
-            items.remove(item);
-            System.out.println("This item has been removed successfully!");
-        }else{
-            System.out.println("This item does not exist! Please try again!");
-        }       
-    }
 }

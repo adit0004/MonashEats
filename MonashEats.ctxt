@@ -8,4 +8,6 @@ comment2.params=newUserList\ newRestaurantList\ newShoppingCart
 comment2.target=MonashEats(java.util.ArrayList,\ RestaurantList,\ ShoppingCart)
 comment3.params=
 comment3.target=void\ startProgram()
-numComments=4
+comment4.params=args
+comment4.target=void\ main(java.lang.String[])
+numComments=5

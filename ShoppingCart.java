@@ -39,26 +39,9 @@ public class ShoppingCart
         return -1;
     }
     
-    public void removeItems(int itemIndex)
-    {
-        //itemIndex starts at 1, items start at 0
-        itemIndex = itemIndex - 1;
-        
-        //Check for validity
-        if (itemIndex <= 5)
-        {
-            items.remove(itemIndex);
-            totalPrice = calculatePriceForCart();
-        }
-    }
+
     
-    public void cancel()
-    {
-        for (int i = 0 ; i < items.size() ; i++)
-        {
-            items.remove(i);
-        }
-    }
+
     
     public double calculatePriceForCart()
     {

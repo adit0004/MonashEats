@@ -28,32 +28,5 @@ public class RestaurantList
     {
         restaurantList = newRestaurantList;
     }
-    public void addRestaurant(Restaurant restaurant){
-        boolean existed=false;
-        for(Restaurant i :  restaurantList){
-            if(restaurant == i){
-               existed=true;
-            }
-        }
-        if(existed){
-            System.out.println("This restaurant is existed! Please try again!");
-        }else{
-            restaurantList.add(restaurant);
-        }
-    }
-    public void removeRestaurant(Restaurant restaurant,ArrayList<Restaurant> rList){
-        boolean existed=false;
-        for(Restaurant i :  restaurantList){
-            if(restaurant == i){
-               existed=true;
-            }
-        }
-        if(existed){
-            restaurantList.remove(restaurant);
-            System.out.println("This restaurant has been removed successfully!");
-        }else{
-            System.out.println("This restaurant does not exist! Please try again!");
-        }
-        //return rList;       
-    }
+    
 }
