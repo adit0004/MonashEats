@@ -6,6 +6,8 @@
  */
 public class Boundary
 {
+    MonashEats monashEats;
+    
     /**
      * Constructor for objects of class Interface
      */
