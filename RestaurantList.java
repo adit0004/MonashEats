@@ -29,4 +29,13 @@ public class RestaurantList
         restaurantList = newRestaurantList;
     }
     
+    /**
+     * get Restaurant List
+     * return ArrayList
+     */
+    public ArrayList getRestaurantList()
+    {
+        return restaurantList;
+    }
+    
 }

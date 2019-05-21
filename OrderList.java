@@ -22,4 +22,13 @@ public class OrderList
     {
         orders = newOrders;
     }
+    
+    /**
+     * get Order List
+     * return ArrayList
+     */
+    public ArrayList getOrderList()
+    {
+        return orders;
+    }
 }

@@ -16,17 +16,19 @@ public class Customer extends User
         super();
         isStudent = false;
         address = "";
+        within30KM = false;
     }
 
     /**
      * Customer class non-default constructor
      */
     public Customer(String newFirstName, String newLastName, String NewphoneNumber,String newEmail,
-                String newPassword, String newAcountType, boolean newIsStudent, String newAddress)
+                String newPassword, String newAcountType, String newAddress, boolean newIsStudent, boolean newWithin30KM)
     {
         super(newFirstName,newLastName,NewphoneNumber,newEmail, newPassword, newAcountType);
         isStudent = newIsStudent;
         address = newAddress;
+        within30KM = newWithin30KM;
     }
     
     /**
@@ -58,6 +60,14 @@ public class Customer extends User
     }
     
     /**
+     * get the account owner within 30 KM or not
+     */
+    public boolean getWithin30KM()
+    {
+        return within30KM;
+    }
+    
+    /**
      * set the account owner's first name
      */
     public void setIsStudent(boolean newIsStudent)
@@ -71,5 +81,13 @@ public class Customer extends User
     public void setAddress(String newAddress)
     {
         address = newAddress;
+    }
+    
+    /**
+     * set the account owner within 30 KM or not
+     */
+    public void setWithin30KM(boolean newWithin30KM)
+    {
+        within30KM = newWithin30KM;
     }
 }
