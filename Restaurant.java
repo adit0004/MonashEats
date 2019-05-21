@@ -24,7 +24,6 @@ public class Restaurant
         restaurantAddress = "Restaurant Address";
         restaurantPhoneNumber = "";
         rate = 0.0;
-        ratingCount = 0;
         orders = new OrderList();
         menu = new Menu();
     }
@@ -32,13 +31,12 @@ public class Restaurant
     /**
      * Parameterized constructor for restaurant
      */
-    public Restaurant(String newRestaurantName, String newRestaurantAddress, String newRestaurantPhoneNumber, double newRate, int newRatingCount, OrderList newOrders, Menu newMenu)
+    public Restaurant(String newRestaurantName, String newRestaurantAddress, String newRestaurantPhoneNumber, double newRate, OrderList newOrders, Menu newMenu)
     {
         this.restaurantName = newRestaurantName;
         this.restaurantAddress = newRestaurantAddress;
         this.restaurantPhoneNumber = newRestaurantPhoneNumber;
         this.rate = newRate;
-        this.ratingCount = newRatingCount;
         this.orders = newOrders;
         this.menu = newMenu;
     }
@@ -73,14 +71,6 @@ public class Restaurant
 
     public void setRate(double rate) {
         this.rate = rate;
-    }
-
-    public int getRatingCount() {
-        return ratingCount;
-    }
-
-    public void setRatingCount(int ratingCount) {
-        this.ratingCount = ratingCount;
     }
 
     public Menu getMenu() {
