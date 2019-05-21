@@ -278,8 +278,15 @@ public class MonashEats
             default:break;
         }
     }
+<<<<<<< HEAD
     public void manageAcc(){
         startProgram();
+=======
+    
+    public static void main(String[] args){
+        MonashEats m = new MonashEats();
+        m.startProgram();
+>>>>>>> e4e8c8c7b11a7833224b34983382614d2c3f5f75
     }
     
     public static void main(String[] args)

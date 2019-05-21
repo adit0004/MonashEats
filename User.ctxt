@@ -1,8 +1,14 @@
 #BlueJ class context
 comment0.target=User
+<<<<<<< HEAD
 comment1.params=
 comment1.target=User()
 comment1.text=\r\n\ the\ default\ constructor\ of\ the\ User\ class\r\n
+=======
+comment1.params=newFirstName\ newLastName\ NewphoneNumber\ newEmail\ newPassword\ newAcountType
+comment1.target=User(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment1.text=\r\n\ the\ non-default\ constructor\ of\ the\ User\ class\r\n
+>>>>>>> e4e8c8c7b11a7833224b34983382614d2c3f5f75
 comment10.params=newFirstName
 comment10.target=void\ setFirstName(java.lang.String)
 comment10.text=\r\n\ set\ the\ account\ owner's\ first\ name\r\n
@@ -21,9 +27,15 @@ comment14.text=\r\n\ set\ the\ account\ owner's\ password\r\n
 comment15.params=newAccountType
 comment15.target=void\ setAccountType(java.lang.String)
 comment15.text=\r\n\ set\ the\ account\ type\r\n
+<<<<<<< HEAD
 comment2.params=newFirstName\ newLastName\ NewphoneNumber\ newEmail\ newPassword\ newAcountType
 comment2.target=User(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
 comment2.text=\r\n\ the\ non-default\ constructor\ of\ the\ User\ class\r\n
+=======
+comment2.params=
+comment2.target=User()
+comment2.text=\r\n\ the\ default\ constructor\ of\ the\ User\ class\r\n
+>>>>>>> e4e8c8c7b11a7833224b34983382614d2c3f5f75
 comment3.params=
 comment3.target=void\ display()
 comment3.text=\r\n\ display\ the\ user's\ details\r\n

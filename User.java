@@ -7,18 +7,7 @@ public class User
     private String password;
     private String accountType;
 
-    /**
-     * the default constructor of the User class
-     */
-    public User()
-    {
-        firstName = "";
-        lastName = "";
-        phoneNumber = "";
-        email = "";
-        password = "";
-        accountType = "";
-    }
+
     
     /**
      * the non-default constructor of the User class
@@ -33,6 +22,18 @@ public class User
         accountType = newAcountType;
     }
 
+    /**
+     * the default constructor of the User class
+     */
+    public User()
+    {
+        firstName = "";
+        lastName = "";
+        phoneNumber = "";
+        email = "";
+        password = "";
+        accountType = "";
+    }
     /**
      * display the user's details
      */
