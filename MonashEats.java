@@ -36,5 +36,12 @@ public class MonashEats
         MonashEats monashEats = new MonashEats();
     }
 
-    
+    /**
+     * get User List
+     * return ArrayList
+     */
+    public ArrayList getUserList()
+    {
+        return userList;
+    }
 }
