@@ -40,10 +40,6 @@ public class ShoppingCart
         return -1;
     }
     
-
-    
-
-    
     public double calculatePriceForCart()
     {
         double total = 0.0;
