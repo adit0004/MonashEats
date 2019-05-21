@@ -7,6 +7,7 @@
  */
 public class Interface
 {
+    private MonashEats monashEats;
 
 
     /**

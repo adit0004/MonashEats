@@ -36,6 +36,7 @@ public class ShoppingCart
             totalPrice = calculatePriceForCart();
             return items.size();
         }
+        
         return -1;
     }
     
