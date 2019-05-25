@@ -19,14 +19,14 @@ public class Boundary
     /**
      * Customer home menu
      */
-    public void customerHome()
+    public void customerHomePage()
     {
         System.out.println("========================================================");
         System.out.println("                    Customer Home");
         System.out.println("========================================================");
         System.out.println();
         System.out.println("1. Order Food");
-        System.out.println("2. Manage Cart");
+        System.out.println("2. Edit Customer information");
         System.out.println("3. Exit");
     }
     
@@ -39,7 +39,10 @@ public class Boundary
         System.out.println("                Viewing Restaurants");
         System.out.println("========================================================");
         System.out.println();
-        System.out.println("Please select a restaurant to see their menu:");
+        System.out.println("Please enter the option (1 - 2): ");
+        System.out.println();
+        System.out.println("1. Select a restaurant for ordering food");
+        System.out.println("2. Go back to Customer Home");
         System.out.println();
     }
     
@@ -81,7 +84,13 @@ public class Boundary
         System.out.println("\t" + restaurantAddress);
         System.out.println("========================================================");
         System.out.println();
-        System.out.println("Please select an item to add to cart:");
+        System.out.println();// there should display the menu
+        System.out.println();
+        System.out.println("Please enter the option (1 - 3): ");
+        System.out.println();
+        System.out.println("1. Add food into the shopping cart");
+        System.out.println("2. Go to the shopping cart");
+        System.out.println("3. Go back to restaurant list");
         System.out.println();
     }
     
@@ -103,10 +112,93 @@ public class Boundary
     /**
      * Shows just "Go to cart". Use inside a loop, after a println() call
      */
-    public void goToCart()
+    public void shoppingCartPage()
+    {
+        System.out.println("========================================================");
+        System.out.println("                       Shopping Cart");
+        System.out.println("========================================================");
+        System.out.println();
+        System.out.println("Please enter the option (1 - 3): ");
+        System.out.println();
+        System.out.println("1. Display cart details");
+        System.out.println("2. Go to the shopping cart");
+        System.out.println("3. ");
+        System.out.println("4. Check out");
+        System.out.println();
+    }
+    
+    /**
+     * Shows check Out Page information
+     */
+    public void checkOutPage()
+    {
+        System.out.println("========================================================");
+        System.out.println("                       Check Out");
+        System.out.println("========================================================");
+        System.out.println();
+        System.out.println("Please enter the option (1 - 3): ");
+        System.out.println();
+        System.out.println("1. Display cart details");
+        System.out.println("2. Select payment method");
+        System.out.println("3. Apply conpon");
+        System.out.println("4. Check out");
+        System.out.println();
+        
+    }
+
+    /**
+     * Shows check Out Page information
+     */
+    public void paymentPage()
+    {
+        System.out.println("Please select a payment method");
+    }
+    
+    /**
+     * Shows check Out Page information
+     */
+    public void couponPage()
+    {
+        System.out.println("========================================================");
+        System.out.println("                       Apply coupon");
+        System.out.println("========================================================");
+        System.out.println();
+        System.out.println("Please enter the option (1 - 2): ");
+        System.out.println();
+        System.out.println("1. Input the coupon code");
+        System.out.println("2. Go back");
+    }
+    
+    /**
+     * Shows check Out Page information
+     */
+    public void afterPaymentPage()
+    {
+        System.out.println("Please enter the option (1 - 4): ");
+        System.out.println();
+        System.out.println("1. View the ordered food detail");
+        System.out.println("2. Rate the restaurant");
+        System.out.println("3. Print the recipt");
+        System.out.println("4. Go back to"); //???which page?
+        System.out.println();
+        System.out.println("Please enter the option: ");
+    }
+    
+    /**
+     * Shows check Out Page information
+     */
+    public void ratingPage()
+    {
+        System.out.print("Please rate the restaurant");
+        System.out.print("input the rating 1 to 5, 1 is the lowest");
+        
+    }
+    
+    /**
+     * Shows check Out Page information
+     */
+    public void showReciptPage()
     {
         System.out.print("Go to cart");
     }
-    
-        
 }

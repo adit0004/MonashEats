@@ -33,7 +33,6 @@ public class MonashEats
         shoppingCart = newShoppingCart;
     }
 
-
     public static void main(String[] args) {
         MonashEats me = new MonashEats();
         ShoppingCart cart = new ShoppingCart();
