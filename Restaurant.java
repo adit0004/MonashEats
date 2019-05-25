@@ -11,10 +11,9 @@ public class Restaurant
     public String restaurantAddress;
     public String restaurantPhoneNumber;
     public double rate;
-    public int ratingCount;
     public Menu menu;
     public OrderList orders;
-    
+
     /**
      * Default constructor for restaurant
      */
@@ -27,16 +26,16 @@ public class Restaurant
         orders = new OrderList();
         menu = new Menu();
     }
-    
+
     /**
      * Parameterized constructor for restaurant
      */
-    public Restaurant(String newRestaurantName, String newRestaurantAddress, String newRestaurantPhoneNumber, double newRate, OrderList newOrders, Menu newMenu)
+    public Restaurant(String newRestaurantName, String newRestaurantAddress, String newRestaurantPhoneNumber, OrderList newOrders, Menu newMenu)
     {
         this.restaurantName = newRestaurantName;
         this.restaurantAddress = newRestaurantAddress;
         this.restaurantPhoneNumber = newRestaurantPhoneNumber;
-        this.rate = newRate;
+        this.rate = 0.0;
         this.orders = newOrders;
         this.menu = newMenu;
     }
@@ -89,11 +88,18 @@ public class Restaurant
         this.orders = orders;
     }
 
-    
-    
-    @Override
-    public String toString() {
-        return "Restaurant{" + "restaurantName=" + restaurantName + ", restaurantAddress=" + restaurantAddress + ", restaurantPhoneNumber=" + restaurantPhoneNumber + ", rate=" + rate + ", ratingCount=" + ratingCount + ", menu=" + menu + ", orders=" + orders + '}';
+    /**
+     * display method for restaurant
+     * show restaurant's 4 attributes to Customer
+     * Name,Address,Phone Number,Rate
+     */
+    public void displayRestaurant() 
+    {
+        System.out.println("Item Name: " + restaurantName);
+        System.out.println("Restaurant Address: " + restaurantAddress);
+        System.out.println("Restaurant Phone Number: " + restaurantPhoneNumber);
+        System.out.println("Rate: " + rate);
+        System.out.println();
     }
-    
+
 }
