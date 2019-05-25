@@ -190,7 +190,7 @@ public class Boundary
     public void ratingPage()
     {
         System.out.print("Please rate the restaurant");
-        System.out.print("input the rating 1 to 5, 1 is the lowest");
+        System.out.print("Please input the rating 1 to 5, 1 is the lowest");
         
     }
     

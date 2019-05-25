@@ -36,8 +36,39 @@ public class ShoppingCart
             totalPrice = calculatePriceForCart();
             return items.size();
         }
+        else
+        {
+            System.out.println("Order up to 5 items");
+        }
         
         return -1;
+    }
+    
+    public void displayShoppingCart()
+    {
+        System.out.println("========================================================");
+        System.out.println("                       Shoping Cart");
+        System.out.println("========================================================");
+        System.out.println("Item Name ---------------------------------------- Price");
+        totalPrice = 0;
+        if(items.size() != 0)
+        {
+            int i = 0;
+            do{
+                String itemName = items.get(i).getItemName();
+                double price = items.get(i).getPrice();
+                totalPrice += price;
+
+                System.out.println((i+1) + ". " + itemName + "---------------------------------" + "$ " + price);
+                i += 1;
+            }while(i < items.size());
+        }
+        else
+            System.out.println("No item in the shopping cart");
+        
+        System.out.println();
+        System.out.println("Delivery ----------------------------------------" + "$ 5.00");
+        System.out.println("Total Price -------------------------------- " + "$ " + totalPrice);
     }
     
     public double calculatePriceForCart()
