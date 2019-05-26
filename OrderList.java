@@ -31,4 +31,9 @@ public class OrderList
     {
         return orders;
     }
+    
+    public void addOrder(Order order)
+    {
+        orders.add(order);
+    }
 }

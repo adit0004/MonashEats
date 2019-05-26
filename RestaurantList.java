@@ -46,9 +46,9 @@ public class RestaurantList
     /**
      * add an Restaurant into menu ArrayList
      */
-    public void addInList(String newName, String newAddress, String phoneNumber,OrderList newOrders, Menu newMenu)
+    public void addInList(String newName, String newAddress, String phoneNumber,double newRate, int newRateCount)
     {
-        Restaurant Restaurant = new Restaurant(newName,newAddress,phoneNumber,newOrders, newMenu);
+        Restaurant Restaurant = new Restaurant(newName,newAddress,phoneNumber,newRate,newRateCount);
         restaurantList.add(Restaurant);
     }
 
@@ -67,6 +67,42 @@ public class RestaurantList
     public ArrayList getRestaurantList()
     {
         return restaurantList;
+    }
+    
+    public void addNewRestaurant(String name, String address, String phone, double rate, int rateCount)
+    {
+        Restaurant restaurant = new Restaurant(name, address, phone, rate, rateCount);
+        restaurantList.add(restaurant);
+    }
+    
+    public Restaurant getRestaurant(int index)
+    {
+        return restaurantList.get(index);
+    }
+    
+    public int getRestaurantCount()
+    {
+        return restaurantList.size();
+    }
+    
+    public String getRestaurantName(int index)
+    {
+        return restaurantList.get(index).getRestaurantName();
+    }
+    
+    public String getRestaurantAddress(int index)
+    {
+        return restaurantList.get(index).getRestaurantAddress();
+    }
+    
+    public double getRestaurantRating(int index)
+    {
+        return restaurantList.get(index).getRate();
+    }
+    
+    public int getRestaurantRateCount(int index)
+    {
+        return restaurantList.get(index).getRateCount();
     }
     
 }

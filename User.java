@@ -148,4 +148,8 @@ public class User
     {
         accountType = newAccountType;
     }
+    public String getAddress()
+    {
+        return "";
+    }
 }

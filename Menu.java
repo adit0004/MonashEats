@@ -20,7 +20,7 @@ public class Menu
     /**
      * Parameterized constructor
      */
-    public Menu(ArrayList<Items> newItems, Restaurant newRestaurant)
+    public Menu(ArrayList<Items> newItems)
     {
         items = newItems;
     }
@@ -53,7 +53,7 @@ public class Menu
      */
     public void removeList(int index)
     {
-        items.remove(index);
+        items.remove(index - 1);
     }
 
     /**
@@ -64,5 +64,40 @@ public class Menu
     {
         return items;
     }
+    
+    public void addNewItem(String name, String desc, double price, boolean onDeal)
+    {
+        Items item = new Items(name, desc, price, onDeal);
+        items.add(item);
+    }
+    
+    public int getItemsCount()
+    {
+        return items.size();
+    }
+    
+    public String getItemName(int index)
+    {
+        return items.get(index).getItemName();
+    }
+    
+    public String getItemDescription(int index)
+    {
+        return items.get(index).getDescription();
+    }
+    
+    public double getItemPrice(int index)
+    {
+        return items.get(index).getPrice();
+    }
+    
+    public boolean getDeal(int index)
+    {
+        return items.get(index).getOnDeal();
+    }
 
+    public Items getItem(int index)
+    {
+        return items.get(index - 1);
+    }
 }

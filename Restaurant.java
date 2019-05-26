@@ -11,6 +11,7 @@ public class Restaurant
     public String restaurantAddress;
     public String restaurantPhoneNumber;
     public double rate;
+    public int rateCount;
     public Menu menu;
     public OrderList orders;
 
@@ -23,6 +24,7 @@ public class Restaurant
         restaurantAddress = "Restaurant Address";
         restaurantPhoneNumber = "";
         rate = 0.0;
+        rateCount = 0;
         orders = new OrderList();
         menu = new Menu();
     }
@@ -30,14 +32,34 @@ public class Restaurant
     /**
      * Parameterized constructor for restaurant
      */
-    public Restaurant(String newRestaurantName, String newRestaurantAddress, String newRestaurantPhoneNumber, OrderList newOrders, Menu newMenu)
+    public Restaurant(String newRestaurantName, String newRestaurantAddress, String newRestaurantPhoneNumber, double newRate, int newRateCount, OrderList newOrders, Menu newMenu)
     {
         this.restaurantName = newRestaurantName;
         this.restaurantAddress = newRestaurantAddress;
         this.restaurantPhoneNumber = newRestaurantPhoneNumber;
-        this.rate = 0.0;
+        this.rate = newRate;
+        this.rateCount = newRateCount;
         this.orders = newOrders;
         this.menu = newMenu;
+    }
+    
+    /**
+     * Parametrized constructor without orders, menu
+     */
+    public Restaurant(String newRestaurantName, String newRestaurantAddress, String newRestaurantPhoneNumber, double newRate, int newRateCount)
+    {
+        this.restaurantName = newRestaurantName;
+        this.restaurantAddress = newRestaurantAddress;
+        this.restaurantPhoneNumber = newRestaurantPhoneNumber;
+        this.rate = newRate;
+        this.rateCount = newRateCount;
+        this.menu = new Menu();
+        this.orders = new OrderList();
+    }
+    
+    public void addItemToMenu(String itemName, String itemDesc, double price, boolean onDeal)
+    {
+        menu.addNewItem(itemName, itemDesc, price, onDeal);
     }
 
     public String getRestaurantName() {
@@ -101,5 +123,51 @@ public class Restaurant
         System.out.println("Rate: " + rate);
         System.out.println();
     }
-
+    
+    public int getMenuCount()
+    {
+        return menu.getItemsCount();
+    }
+    
+    public Items getItem(int index)
+    {
+        return menu.getItem(index);
+    }
+    
+    public String getItemName(int index)
+    {
+        return menu.getItemName(index);
+    }
+    
+    public double getItemPrice(int index)
+    {
+        return menu.getItemPrice(index);
+    }
+    
+    public String getItemDescription(int index)
+    {
+        return menu.getItemDescription(index);
+    }
+    
+    public boolean getDeal(int index)
+    {
+        return menu.getDeal(index);
+    }
+    
+    public void newRating(int rating)
+    {
+        double totalRate = rate * rateCount;
+        rateCount += 1;
+        rate = (totalRate + rating) / rateCount;
+    }
+    
+    public void addOrder(Order order)
+    {
+        orders.addOrder(order);
+    }
+    
+    public int getRateCount()
+    {
+        return rateCount;
+    }
 }

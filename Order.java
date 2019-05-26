@@ -13,7 +13,7 @@ public class Order
    String orderStatus;
    String paymentStatus;
    ArrayList<Payment> payment;
-   
+   User customer;
    /**
     * Default constructor for order
     */
@@ -25,15 +25,16 @@ public class Order
        paymentStatus = "Unpaid";
        payment = new ArrayList<Payment>();
    }
+
+    public Order(String orderDateTime, ArrayList<Items> items, String orderStatus, String paymentStatus, ArrayList<Payment> payment, User customer) {
+        this.orderDateTime = orderDateTime;
+        this.items = items;
+        this.orderStatus = orderStatus;
+        this.paymentStatus = paymentStatus;
+        this.payment = payment;
+        this.customer = customer;
+    }
    
-   public Order(String newOrderDateTime, ArrayList<Items> newItems, String newOrderStatus, String newPaymentStatus, ArrayList<Payment> newPayment)
-   {
-       orderDateTime = newOrderDateTime;
-       items = newItems;
-       orderStatus = newOrderStatus;
-       paymentStatus = newPaymentStatus;
-       payment = newPayment;
-   }
    
    public String getOrderDateTime()
    {
@@ -84,11 +85,75 @@ public class Order
    {
        payment = newPayment;
    }
+
+    public User getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(User customer) {
+        this.customer = customer;
+    }
    
    public String generateReceipt()
    {
        String receipt = "";
-       
        return receipt;
    }
+   
+   public boolean checkCoupon()
+   {
+       for (int i = 0 ; i < payment.size() ; i++)
+       {
+           if (payment.get(i).getPaymentMethod().equals("Coupon"))
+                return true;
+       }
+       return false;
+   }
+   
+   public void addCouponPayment()
+   {
+       Payment temp = new Payment("Coupon", 5.0);
+       payment.add(temp);
+   }
+   
+   public void addPayment(String paymentMethod, double amount)
+   {
+       Payment temp = new Payment(paymentMethod, amount);
+       payment.add(temp);
+   }
+   
+   public String getItemName(int index)
+   {
+       return items.get(index).getItemName();
+   }
+   public String getItemDescription(int index)
+   {
+       return items.get(index).getDescription();
+   }
+   public double getItemPrice(int index)
+   {
+       return items.get(index).getPrice();
+   }
+   public boolean getDeal(int index)
+   {
+       return items.get(index).getOnDeal();
+   }
+   public int getItemCount()
+   {
+       return items.size();
+    }
+    public int getPaymentCount()
+    {
+        return payment.size();
+    }
+    
+    public String getPaymentMethod(int index)
+    {
+        return payment.get(index).getPaymentMethod();
+    }
+    
+    public double getAmount(int index)
+    {
+        return payment.get(index).getAmount();
+    }
 }
