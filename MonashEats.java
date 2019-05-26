@@ -104,18 +104,18 @@ public class MonashEats
     public void checkOut(ShoppingCart cart) {
         ui.checkOutPage();//show the check out page
         MonashEats me = new MonashEats();       
-        ShoppingCart carts = new ShoppingCart();       
+        ShoppingCart carts = cart;       
         Scanner sc = new Scanner(System.in);
         int input = sc.nextInt();
         switch (input) {
             case 1:
-                me.redeemCoupon(carts);
+                me.displayCart(carts);
                 break;
             case 2:
-                me.afterPayment(1);
+                me.selectPayment(carts);
                 break;
             case 3:
-                me.afterPayment(2);
+                me.redeemCoupon(carts);
                 break;
             case 4:
                 checkOut(carts);
@@ -129,28 +129,12 @@ public class MonashEats
         ShoppingCart scart = cart;
         ui.couponPage();//coupon page
         Scanner sc = new Scanner(System.in);
-        int input = sc.nextInt();
-        if (input == 1) {
-            String coupon = sc.nextLine();
-            if (coupon.toUpperCase().equals("COUPON")) {
-                double totalPrice = scart.getTotalPrice();
-                totalPrice = totalPrice - 5.0;
-                scart.setTotalPrice(totalPrice);
-                boolean flag = true;
-                ui.list(true);//to add coupon to create new page with coupon and change the total price
-                ui.paymentPage();//after enter coupon code, show the payment option: card or cash
-                int op = sc.nextInt();
-                switch (op) {
-                    case 1:afterPayment(1);//show the list or the receipt for the customer after pay by card
-                        break;
-                    case 2:afterPayment(2);//pay by cash
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }else{
-            checkOut(scart);//go back to the previous page
+        String coupon = sc.nextLine();
+        if (coupon.toUpperCase().equals("COUPON")) {
+            double totalPrice = scart.getTotalPrice();
+            totalPrice = totalPrice - 5.0;
+            scart.setTotalPrice(totalPrice);
+            selectPayment(carts);
         }
     }
 
@@ -178,87 +162,42 @@ public class MonashEats
     {
         return userList;
     }
-    
-    public void displayRestaurantList()
-    {
-        ui.viewRestaurantList();
-        for (int i = 0; i < rl.getRestaurantCount(); i++)
-        {
-            ui.viewRestaurantDetailsForMenu(rl.getRestaurantName(i),rl.getRestaurantAddress(i),rl.getRestaurantRating(i),i);
-        }
-        
+    public void selectPaymet(ShoppingCart cart){
+           ui.paymentPage();
+           Scanner sc = new Scanner(System.in);
+           int i = sc.nextInt();
+           String pay="";
+           if(i==1){
+               pay="Card";
+            }else{
+                pay="Cash";
+            }
+           cart.setPayment(pay);
+           afterPayment(carts);
     }
-    
-    public void startProgram()
-    {
-        ui.customerHome();
-        
-        Scanner input = new Scanner(System.in);
-        int homeAns = 0;
-        while (homeAns != 3)
-        {
-            try 
-            {
-                homeAns = input.nextInt();
-            }
-            catch(Exception e)
-            {
-                ui.invalidInputError(1);
-                continue;
-            }
-            
-            if (homeAns == 1)
-            {
-                displayRestaurantList();
-                
-                int restaurantAns = 0;
-                
-                while(restaurantAns != 0 || restaurantAns != (rl.getRestaurantCount() + 1))
-                {     
-                    try 
-                    {
-                        homeAns = input.nextInt();
-                    }
-                    catch(Exception e)
-                    {
-                        ui.invalidInputError(1);
-                        continue;
-                    }
-                    
-                    if(restaurantAns == (rl.getRestaurantCount() + 1))
-                    {
-                        break;
-                    }
-                    
-                    else if (restaurantAns < 0 || restaurantAns > (rl.getRestaurantCount() + 1))
-                    {
-                        ui.invalidInputError(0);
-                        continue;
-                    }
-                    
-                    else
-                    {
-                        ui.showMenu(rl.getRestaurantName(restaurantAns), rl.getRestaurantAddress(restaurantAns));
-                    }
-                    
-                }
-                
-            }
-            
-            else if (homeAns == 2)
-            {
-                
-            }
-            
-            else if (homeAns == 3)
-            {
-                System.out.println("Thank you for using Monash Eats.");
-                System.exit(0);
-            }
-            else
-            {
-                ui.invalidInputError(0);
-            }
+    public void selectPayment(ShoppingCart cart){
+        ui.afterPaymentPage();
+        ShoppingCart carts=cart;
+        Scanner sc = new Scanner(System.in);
+        int input= sc.nextInt();
+        switch(input){
+            case 1:ui.displayCart(carts);selectPayment(carts);break;
+            case 2:rating(carts);break;
+            case 3:showRecipt(carts);break;
+            case 4:checkOut(carts);break;
+            default:break;
         }
+    }
+    public void rating(ShoppingCart cart){
+        ui.ratingPage();
+        Scanner sc = new Scanner(System.in);
+        int input= sc.nextInt();
+        rateRestaurant(resturant, input);
+        System.exit(1);//
+    }
+    public void showRecipt(ShoppingCart cart){
+        String restaurantName,restaurantAddress,customerFirstName, customerLastName, customerAddress, customerPhoneNumber, date;
+        showReciptPage(restaurantName,restaurantAddress,customerFirstName, customerLastName, customerAddress, customerPhoneNumber, date);
+    
     }
 }
