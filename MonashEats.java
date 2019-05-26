@@ -10,6 +10,19 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class MonashEats
 {
+  import java.util.*;
+
+import javax.swing.filechooser.FileNameExtensionFilter;
+import monasheats.Boundary;
+
+/**
+ * The control class for Monash Eats. This class also behaves like the boundary class, handling IO between the user and the system.
+ * @author Aditya Kumar
+ * @version 5/5/2019 
+ */
+
+public class MonashEats
+{
     private ArrayList<User> userList;
     private RestaurantList restaurantList;
     private ShoppingCart shoppingCart;
@@ -47,7 +60,7 @@ public class MonashEats
         int input = sc.nextInt();
         switch (input) {
             case 1:
-                me.displayCart(carts);
+                ui.displayCart(carts);
                 break;
             case 2:
                 me.selectPayment(carts);
@@ -63,8 +76,8 @@ public class MonashEats
         }
     }
 
-    private void redeemCoupon(ShoppingCart cart) {
-        ShoppingCart scart = cart;
+    public void redeemCoupon(ShoppingCart cart) {
+        ShoppingCart carts = cart;
         ui.couponPage();//coupon page
         Scanner sc = new Scanner(System.in);
         String coupon = sc.nextLine();
@@ -135,7 +148,7 @@ public class MonashEats
     }
     public void showRecipt(ShoppingCart cart){
         String restaurantName,restaurantAddress,customerFirstName, customerLastName, customerAddress, customerPhoneNumber, date;
-        showReciptPage(restaurantName,restaurantAddress,customerFirstName, customerLastName, customerAddress, customerPhoneNumber, date);
+        ui.showReciptPage(restaurantName,restaurantAddress,customerFirstName, customerLastName, customerAddress, customerPhoneNumber, date);
     
     }
 }
