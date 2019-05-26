@@ -11,10 +11,10 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class MonashEats
 {
     private ArrayList<User> userList;
-    private RestaurantList restaurantList;
+    //private RestaurantList restaurantList;
     private ShoppingCart shoppingCart;
-    public Boundary ui;
-    public RestaurantList rl;
+    private Boundary ui;
+    private RestaurantList rl;
 
     /**
      * Default constructor for MonashEats
@@ -22,22 +22,83 @@ public class MonashEats
     public MonashEats()
     {
         userList = new ArrayList<User>();
-        restaurantList = new RestaurantList();
+        rl = new RestaurantList();
         shoppingCart = new ShoppingCart();
+        ui = new Boundary();
+        
+        
+        // Add preloaded restaurants
+        String restaurantName = "Derby Thai";
+        String restaurantAddress = "4 Derby Road";
+        String phone = "(03) 9571 1306";
+        double rating = 4.5;
+        
+        rl.addNewRestaurant(restaurantName, restaurantAddress, phone, rating);
+        
+        restaurantName = "Tuck Shop";
+        restaurantAddress = "273 Hawthorn Road";
+        phone = "0431 406 580";
+        rating = 4.6;
+        
+        rl.addNewRestaurant(restaurantName, restaurantAddress, phone, rating);
+        
+        // Create 5 items for Derby Thai and add to their menu
+        String itemName = "Curry Puff (5 Pieces)";
+        String itemDescription = "Golden pastry filled with delicious curry mix of chicken and potato";
+        double price = 7.0;
+        boolean onDeal = false;
+        
+        rl.get(0).addItemToMenu(itemName, itemDescription, price, onDeal);
+        
+        itemName = "Spring Roll (5 pieces)";
+        itemDescription = "Chicken or Vegetable";
+        price = 7.0;
+        onDeal = true;
+        
+        rl.get(0).addItemToMenu(itemName, itemDescription, price, onDeal);
+        
+        itemName = "Green Curry";
+        itemDescription = "Thai green curry paste cooked in coconut milk and vegetables with Chicken, Beef or Pork";
+        price = 13.0;
+        onDeal = false;
+        
+        rl.get(0).addItemToMenu(itemName, itemDescription, price, onDeal);
+        
+        itemName = "Massaman Curry";
+        itemDescription = "Chicken, Beef or Pork with onions, potato, cashew nuts, dry chilli and herbs";
+        price = 14.0;
+        onDeal = false;
+        
+        rl.get(0).addItemToMenu(itemName, itemDescription, price, onDeal);
+        
+        itemName = "Steamed Jasmin Rice";
+        itemDescription = "Bowl of steamed jasmin rice";
+        price = 2.0;
+        onDeal = false;
+        
+        rl.get(0).addItemToMenu(itemName, itemDescription, price, onDeal);
+        
+        // Create 5 items for Tuck Shop and add to their menu
+        itemName = "Minor Burger";
+        itemDescription = "";
+        price = ;
+        onDeal = false;
     }
     
     public MonashEats(ArrayList<User> newUserList, RestaurantList newRestaurantList, ShoppingCart newShoppingCart)
     {
         userList = newUserList;
-        restaurantList = newRestaurantList;
+        rl = newRestaurantList;
         shoppingCart = newShoppingCart;
+        ui = new Boundary();
     }
 
 
     public static void main(String[] args) {
         MonashEats me = new MonashEats();
-        ShoppingCart cart = new ShoppingCart();
-        me.checkOut(cart);
+        me.startProgram();
+        //ShoppingCart cart = new ShoppingCart();
+        //me.checkOut(cart);
     }
 
     public void checkOut(ShoppingCart cart) {
@@ -94,7 +155,7 @@ public class MonashEats
     }
 
     private void afterPayment(int i) {
-        ui.afterPaymentPage();
+            ui.afterPaymentPage();
         Scanner sc = new Scanner(System.in);
         int ops =sc.nextInt();
         boolean flag = false;
@@ -116,5 +177,88 @@ public class MonashEats
     public ArrayList getUserList()
     {
         return userList;
+    }
+    
+    public void displayRestaurantList()
+    {
+        ui.viewRestaurantList();
+        for (int i = 0; i < rl.getRestaurantCount(); i++)
+        {
+            ui.viewRestaurantDetailsForMenu(rl.getRestaurantName(i),rl.getRestaurantAddress(i),rl.getRestaurantRating(i),i);
+        }
+        
+    }
+    
+    public void startProgram()
+    {
+        ui.customerHome();
+        
+        Scanner input = new Scanner(System.in);
+        int homeAns = 0;
+        while (homeAns != 3)
+        {
+            try 
+            {
+                homeAns = input.nextInt();
+            }
+            catch(Exception e)
+            {
+                ui.invalidInputError(1);
+                continue;
+            }
+            
+            if (homeAns == 1)
+            {
+                displayRestaurantList();
+                
+                int restaurantAns = 0;
+                
+                while(restaurantAns != 0 || restaurantAns != (rl.getRestaurantCount() + 1))
+                {     
+                    try 
+                    {
+                        homeAns = input.nextInt();
+                    }
+                    catch(Exception e)
+                    {
+                        ui.invalidInputError(1);
+                        continue;
+                    }
+                    
+                    if(restaurantAns == (rl.getRestaurantCount() + 1))
+                    {
+                        break;
+                    }
+                    
+                    else if (restaurantAns < 0 || restaurantAns > (rl.getRestaurantCount() + 1))
+                    {
+                        ui.invalidInputError(0);
+                        continue;
+                    }
+                    
+                    else
+                    {
+                        ui.showMenu(rl.getRestaurantName(restaurantAns), rl.getRestaurantAddress(restaurantAns));
+                    }
+                    
+                }
+                
+            }
+            
+            else if (homeAns == 2)
+            {
+                
+            }
+            
+            else if (homeAns == 3)
+            {
+                System.out.println("Thank you for using Monash Eats.");
+                System.exit(0);
+            }
+            else
+            {
+                ui.invalidInputError(0);
+            }
+        }
     }
 }

@@ -97,9 +97,18 @@ public class Items
         onDeal = newOnDeal;
     }
 
-    @Override
-    public String toString() {
-        return "Items{" + "itemName=" + itemName + ", description=" + description + ", price=" + price + ", onDeal=" + onDeal + '}';
+    /**
+     * display method for Item
+     * show item's 4 attributes
+     * name,description,price,onDeal
+     */
+    public void displayItem() 
+    {
+        System.out.println("Item Name: " + itemName);
+        System.out.println("Description: " + description);
+        System.out.println("Price: " + price);
+        System.out.println("On Deal: " + onDeal);
+        System.out.println();
     }
     
 }
