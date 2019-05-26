@@ -197,8 +197,20 @@ public class Boundary
     /**
      * Shows check Out Page information
      */
-    public void showReciptPage()
+    public void showReciptPage(String restaurantName,String restaurantAddress,String customerFirstName, String customerLastName, 
+                               String customerAddress, String customerPhoneNumber, String date)
     {
-        System.out.print("Go to cart");
+        System.out.println("========================================================");
+        System.out.println("                         Recipt");
+        System.out.println("========================================================");
+        System.out.println(restaurantName);
+        System.out.println(restaurantAddress);
+        System.out.println("========================================================");
+        System.out.println("Customer: " + customerFirstName + " " + customerLastName);
+        System.out.println("Customer Address: " +customerAddress);
+        System.out.println("Customer Phone Number: " + customerPhoneNumber);
+        System.out.println("Order date: " + date);
+        System.out.println("========================================================");
+        // Then the method displayShoppingCart()
     }
 }
