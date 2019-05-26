@@ -136,12 +136,13 @@ public class Boundary
         System.out.println("                       Check Out");
         System.out.println("========================================================");
         System.out.println();
-        System.out.println("Please enter the option (1 - 3): ");
+        System.out.println("Please enter the option (1 - 4): ");
         System.out.println();
         System.out.println("1. Display cart details");
         System.out.println("2. Select payment method");
         System.out.println("3. Apply conpon");
-        System.out.println("4. Check out");
+        //System.out.println("4. Check out");//customer has been in the prograss of checking out in the page
+        System.out.println("4. go back to previous page");
         System.out.println();
         
     }
@@ -152,6 +153,9 @@ public class Boundary
     public void paymentPage()
     {
         System.out.println("Please select a payment method");
+        System.out.println("1. Pay by Card");
+        System.out.println("2. Pay by Cash");
+        System.out.println();
     }
     
     /**
@@ -179,7 +183,7 @@ public class Boundary
         System.out.println("1. View the ordered food detail");
         System.out.println("2. Rate the restaurant");
         System.out.println("3. Print the recipt");
-        System.out.println("4. Go back to"); //???which page?
+        System.out.println("4. Go back to"); //go back to previous page
         System.out.println();
         System.out.println("Please enter the option: ");
     }
